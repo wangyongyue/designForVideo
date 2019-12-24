@@ -13,6 +13,8 @@ class Design:Vue,V_ViewControllerProtocol{
     var arrayContent = [VueData]()
     var r = Record()
 
+    let bar = SelectionTabBar()
+
     func v_viewController() -> UIViewController{
         let vc = TableViewController()
         vc.m = self
@@ -64,7 +66,7 @@ class Design:Vue,V_ViewControllerProtocol{
                 if number == 1{
                     
                     UIViewController.toMain()
-                    Alert.show(str: "原型保存完成")
+                    Alert.show(str: "保存完成")
                 }
                 
             }
@@ -94,11 +96,9 @@ class Design:Vue,V_ViewControllerProtocol{
            let data = self.arrayContent[index] as! VueData
            let number = data.v_identifier
            if data is AddCellModel{
-               let bar = SelectionTabBar()
-               bar.show { (data) in
+            self.bar.show { (data) in
                 
-                    self.arrayContent[index] = data
-                    self.arrayContent.append(AddCellModel())
+                    self.arrayContent.insert(data, at: self.arrayContent.count - 1)
                     self.v_array(vId: ARRAYID) { () -> Array<VueData>? in
                         return self.arrayContent
                                

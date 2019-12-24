@@ -12,8 +12,6 @@ class MineSetupCell: UITableViewCell {
     
     lazy private var headImage:UIImageView = {
         let a = UIImageView()
-        a.layer.cornerRadius = 12
-        a.layer.masksToBounds = true
         a.image = UIImage.init(named: "setting")
         return a
     }()

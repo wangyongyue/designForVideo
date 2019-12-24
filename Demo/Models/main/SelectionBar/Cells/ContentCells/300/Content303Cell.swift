@@ -36,7 +36,7 @@ class Content303Cell: UITableViewCell {
         
         
         let layout = UICollectionViewFlowLayout()
-        layout.itemSize = CGSize.init(width: WIDTH/3, height: 320)
+        layout.itemSize = CGSize.init(width: WIDTH/4, height: 210)
         layout.scrollDirection = .horizontal
         layout.minimumLineSpacing = 0
         layout.minimumInteritemSpacing = 0
@@ -116,7 +116,7 @@ class Content303CellModel:VueData{
     
     override func v_height() -> CGFloat {
         
-        return 380
+        return 270
     }
 }
 

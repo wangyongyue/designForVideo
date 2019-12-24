@@ -13,6 +13,7 @@ class Details:Vue,V_ViewControllerProtocol{
     var arrayNav = [VueData]()
     var arrayContent = [VueData]()
     var r = Record()
+    let bar = SelectionTabBar()
 
     func v_viewController() -> UIViewController{
         let vc = TableViewController()
@@ -73,11 +74,10 @@ class Details:Vue,V_ViewControllerProtocol{
             let number = data.v_identifier
             if data is AddCellModel{
                 
-                let bar = SelectionTabBar()
-                bar.show { (data) in
+                self.bar.show { (data) in
                     
-                    self.arrayContent[index] = data
-                    self.arrayContent.append(AddCellModel())
+                    self.arrayContent.insert(data, at: self.arrayContent.count - 1)
+
 
                     self.v_array(vId: ARRAYID) { () -> Array<VueData>? in
                         return self.arrayContent

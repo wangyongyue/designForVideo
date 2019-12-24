@@ -51,12 +51,13 @@ class MineTabSubCell: UICollectionViewCell {
 
         self.headImage.snp.makeConstraints { (make) in
             
-            make.center.equalTo(self.contentView)
-            
+            make.centerX.equalTo(self.contentView)
+            make.top.equalTo(0)
+
         }
         self.headerLabel.snp.makeConstraints { (make) in
             
-            make.top.equalTo(self.headImage.snp_bottomMargin).offset(20)
+            make.top.equalTo(self.headImage.snp_bottomMargin).offset(10)
             make.left.equalTo(0)
             make.right.equalTo(0)
 

@@ -34,16 +34,15 @@ class SelectionBar1:Vue,GetViewProtocol{
        var array = [VueData]()
       array.append(BannerCellModel())
        
-       array.append(Content201CellModel())
-       array.append(Content202CellModel())
+       
+       array.append(Content101CellModel())
+       array.append(Content102CellModel())
+       array.append(Content103CellModel())
+       array.append(Content104CellModel())
        array.append(Content105CellModel())
+       array.append(Content106CellModel())
+       
 
-       array.append(Content203CellModel())
-       array.append(Content204CellModel())
-       array.append(Content205CellModel())
-       
-       
-      
 
       
 
@@ -54,7 +53,10 @@ class SelectionBar1:Vue,GetViewProtocol{
         
          
         self.v_index(vId: INDEXID) { (index) in
-            self.block?(array[index])
+            let a = array[index]
+            if let classType = a.classForCoder as? VueData.Type {
+                self.block?(classType.init())
+            }
         }
         
     }

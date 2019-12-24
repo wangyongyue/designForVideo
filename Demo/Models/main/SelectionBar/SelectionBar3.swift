@@ -32,7 +32,9 @@ class SelectionBar3:Vue,GetViewProtocol{
         
        var array = [VueData]()
        
-       
+       array.append(Content301CellModel())
+       array.append(Content302CellModel())
+       array.append(Content303CellModel())
        array.append(MineCellModel())
        array.append(MineTabCellModel())
        array.append(MineSetupCellModel())
@@ -45,7 +47,10 @@ class SelectionBar3:Vue,GetViewProtocol{
         
          self.v_index(vId: INDEXID) { (index) in
              
-            self.block?(array[index])
+            let a = array[index]
+            if let classType = a.classForCoder as? VueData.Type {
+                self.block?(classType.init())
+            }
 
         }
         

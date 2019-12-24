@@ -16,36 +16,14 @@ class SelectionTabBar:Vue{
         
         self.view = AlertMenuView.init(self, 3)
         self.block = ablock
-
     }
-   
     override func v_start() {
-        dealNav()
         dealTab()
         dealContent()
-        
     }
-        
-        
-    private func dealNav(){
-        
-     
-        var array = [VueData]()
-        let m = KnowledgeHomeNavCellModel()
-        m.name = "首页"
-        array.append(m)
-        self.v_array(vId: NAVARRAYID) { () -> Array<VueData>? in
-            return array
-        }
-               
-        self.v_index(vId: NAVINDEXID) { (index) in
             
-        }
-        
-    }
-        
     private func dealTab(){
-        let titles = ["文字/图片","图片/视频","设置"]
+        let titles = ["c1","c2","c3"]
         var array = [VueData]()
         for value in titles {
             let m = TabHeaderLineCellModel()
@@ -73,21 +51,27 @@ class SelectionTabBar:Vue{
        
         bar1.choiceData { (data) in
             self.block?(data)
-            self.v_if(vId: SUPERVIEWREMOVE) { () -> Bool? in
-                return true
-            }
+            Alert.show(str: "添加")
+
+//            self.v_if(vId: SUPERVIEWREMOVE) { () -> Bool? in
+//                return true
+//            }
         }
         bar2.choiceData { (data) in
             self.block?(data)
-            self.v_if(vId: SUPERVIEWREMOVE) { () -> Bool? in
-                return true
-            }
+            Alert.show(str: "添加")
+
+//            self.v_if(vId: SUPERVIEWREMOVE) { () -> Bool? in
+//                return true
+//            }
         }
         bar3.choiceData { (data) in
             self.block?(data)
-            self.v_if(vId: SUPERVIEWREMOVE) { () -> Bool? in
-                return true
-            }
+            Alert.show(str: "添加")
+
+//            self.v_if(vId: SUPERVIEWREMOVE) { () -> Bool? in
+//                return true
+//            }
         }
         
 

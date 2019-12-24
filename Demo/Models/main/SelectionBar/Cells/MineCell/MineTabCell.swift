@@ -36,7 +36,7 @@ class MineTabCell: UITableViewCell {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
                 
         let layout = UICollectionViewFlowLayout()
-        layout.itemSize = CGSize.init(width: WIDTH/3, height: 120)
+        layout.itemSize = CGSize.init(width: WIDTH/3, height: 80)
         layout.scrollDirection = .vertical
         layout.minimumLineSpacing = 0
         layout.minimumInteritemSpacing = 0
@@ -68,7 +68,7 @@ class MineTabCell: UITableViewCell {
         self.contentView.addSubview(self.line)
         self.line.snp.makeConstraints { (make) in
             
-            make.height.equalTo(0.5)
+            make.height.equalTo(0)
             make.left.equalTo(0)
             make.right.equalTo(0)
             make.bottom.equalTo(0)
@@ -86,10 +86,9 @@ class MineTabCell: UITableViewCell {
             let m = aModel as! MineTabCellModel
             
             var array = Array<VueData>()
-            array.append(MineTabSubCellModel("mine_1","数据数据"))
             array.append(MineTabSubCellModel("mine_2","数据数据"))
-            array.append(MineTabSubCellModel("mine_3","数据数据"))
-            array.append(MineTabSubCellModel("mine_4","数据数据"))
+            array.append(MineTabSubCellModel("mine_2","数据数据"))
+            array.append(MineTabSubCellModel("mine_2","数据数据"))
 
             self.m.v_array(vId: ARRAYID) { () -> Array<VueData>? in
                 return array
@@ -117,7 +116,7 @@ class MineTabCellModel:VueData{
     
     override func v_height() -> CGFloat {
         
-        return 240
+        return 80
     }
 }
 
