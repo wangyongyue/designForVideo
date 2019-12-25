@@ -83,3 +83,44 @@ extension UIViewController{
                
     }
 }
+extension UIApplication {
+
+    func changeMethod(_ object: AnyClass) -> () {
+        
+        let originalSelector = #selector(sendEvent(_:))
+        let swizzledSelector = #selector(MysendEvent(_:))
+        
+        let originalMethod = class_getInstanceMethod(object, originalSelector)
+        let swizzledMethod = class_getInstanceMethod(object, swizzledSelector)
+        
+        let didAddMethod: Bool = class_addMethod(object, originalSelector, method_getImplementation(swizzledMethod!), method_getTypeEncoding(swizzledMethod!))
+        if didAddMethod {
+            class_replaceMethod(object, swizzledSelector, method_getImplementation(originalMethod!), method_getTypeEncoding(originalMethod!))
+        } else {
+            method_exchangeImplementations(originalMethod!, swizzledMethod!)
+        }
+    }
+    
+    @objc func MysendEvent(_ event: UIEvent){
+        
+       if let touchs = event.allTouches{
+            
+            if let touch = touchs.first,let a = touch.gestureRecognizers?.first?.classForCoder{
+                let point = touch.location(in: UIApplication.shared.windows.first)
+
+                if NSStringFromClass(a) == "_UISystemGestureGateGestureRecognizer"{
+                       Alert.touch(point)
+                }else{
+                    Alert.touchMove(point)
+                }
+               
+            }
+            
+            
+        }
+        //App的点击事件
+        print("The user is active")
+        MysendEvent(event)
+        
+    }
+}

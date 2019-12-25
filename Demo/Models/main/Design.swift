@@ -92,7 +92,7 @@ class Design:Vue,V_ViewControllerProtocol{
        }
         
        self.v_index(vId: INDEXID) { (index) in
-        
+                
            let data = self.arrayContent[index] as! VueData
            let number = data.v_identifier
            if data is AddCellModel{
@@ -106,15 +106,6 @@ class Design:Vue,V_ViewControllerProtocol{
                     self.r.array = self.arrayContent
                               
                 }
-
-//            let bar = SelectionBar()
-//            bar.show { (data) in
-//
-//
-//
-//            }
-            
-           
                
            }else{
                if number == 1{

@@ -173,7 +173,125 @@ class Alert: UIView {
             v.removeFromSuperview()
         }
     }
-    
+    static func touch(_ point:CGPoint?){
+        let window = UIApplication.shared.windows.first
+        if let arr  = window?.subviews{
+            for value in arr{
+                if value.tag == 1000{
+                    return
+                }
+            }
+        }
+
+        let v = UIView()
+        
+        if Configuration.instructions.imageDefault{
+            v.backgroundColor = UIColor.init(white: 1.0, alpha: 0.9)
+
+        }else{
+            
+            v.backgroundColor = UIColor.init(white: 0.6, alpha: 0.6)
+
+        }
+        v.tag = 1000
+        v.frame = window?.bounds ?? CGRect.zero
+        window?.addSubview(v)
+        
+
+        v.frame = CGRect.init(x: 100, y: 100, width: 50, height: 50)
+        if let p = point{
+            v.center = p
+        }
+        v.layer.cornerRadius = 25
+        v.layer.masksToBounds = true
+       
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.2) {
+            v.removeFromSuperview()
+        }
+
+        
+        
+    }
+    static func touchMove(_ point:CGPoint?){
+        let window = UIApplication.shared.windows.first
+        var isN = false
+        if let arr  = window?.subviews{
+            for value in arr{
+                if value.tag == 10000{
+
+                     isN = true
+                     if let a = window?.viewWithTag(10000), let p = point{
+                         a.center = p
+                     }
+
+                }else{
+                    
+                    
+                    
+                    
+                }
+            
+            }
+        }
+
+        let v = UIView()
+        
+        if Configuration.instructions.imageDefault{
+            v.backgroundColor = UIColor.init(white: 1.0, alpha: 0.9)
+
+        }else{
+            
+            v.backgroundColor = UIColor.init(white: 0.6, alpha: 0.6)
+
+        }
+        v.frame = window?.bounds ?? CGRect.zero
+        window?.addSubview(v)
+        
+
+        v.frame = CGRect.init(x: 100, y: 100, width: 50, height: 50)
+        if let p = point{
+            v.center = p
+        }
+        v.layer.cornerRadius = 25
+        v.layer.masksToBounds = true
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.01) {
+            v.removeFromSuperview()
+        }
+        
+        if isN == false{
+            
+            let next = UIView()
+            if Configuration.instructions.imageDefault{
+                   next.backgroundColor = UIColor.init(white: 1.0, alpha: 0.9)
+
+               }else{
+                   
+                   next.backgroundColor = UIColor.init(white: 0.6, alpha: 0.6)
+
+               }
+               next.tag = 10000
+               next.frame = window?.bounds ?? CGRect.zero
+               window?.addSubview(next)
+               
+
+               next.frame = CGRect.init(x: 100, y: 100, width: 50, height: 50)
+               if let p = point{
+                   next.center = p
+               }
+               next.layer.cornerRadius = 25
+               next.layer.masksToBounds = true
+            
+              
+               DispatchQueue.main.asyncAfter(deadline: .now() + 0.2) {
+                   next.removeFromSuperview()
+               }
+                   
+                   
+        }
+
+        
+        
+    }
     
     
     

@@ -51,7 +51,6 @@ class SelectionTabBar:Vue{
        
         bar1.choiceData { (data) in
             self.block?(data)
-            Alert.show(str: "添加")
 
 //            self.v_if(vId: SUPERVIEWREMOVE) { () -> Bool? in
 //                return true
@@ -59,7 +58,6 @@ class SelectionTabBar:Vue{
         }
         bar2.choiceData { (data) in
             self.block?(data)
-            Alert.show(str: "添加")
 
 //            self.v_if(vId: SUPERVIEWREMOVE) { () -> Bool? in
 //                return true
@@ -67,7 +65,6 @@ class SelectionTabBar:Vue{
         }
         bar3.choiceData { (data) in
             self.block?(data)
-            Alert.show(str: "添加")
 
 //            self.v_if(vId: SUPERVIEWREMOVE) { () -> Bool? in
 //                return true
