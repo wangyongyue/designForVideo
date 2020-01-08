@@ -19,10 +19,15 @@ let  bgColor = UIColor.init(red: 230/255.0, green: 230/255.0, blue: 230/255.0, a
 
 class Configuration{
     
-    var imageDefault = false //false true //为true显示默认图片
+    var imageDefault = true //false true //为true显示默认图片
     static let instructions = KnowledgeInstructions()
     
     func getTabBar() -> UIViewController{
+        let tab = BaseTabBarController()
+        tab.addChildVC(childVC: Home().v_viewController(), childTitle: "主页", image: Image.home(), selectedImage: Image.home_sel())
+        return tab
+    }
+    func getMainTabBar() -> UIViewController{
         let tab = BaseTabBarController()
         tab.addChildVC(childVC: Home().v_viewController(), childTitle: "主页", image: Image.home(), selectedImage: Image.home_sel())
         return tab
@@ -81,6 +86,23 @@ extension UIViewController{
         app.window?.rootViewController = tab;
         app.window?.makeKeyAndVisible();
                
+    }
+    
+    static func toProject(){
+            let app = UIApplication.shared.delegate as! AppDelegate
+            let tab = Configuration.instructions.getMainTabBar()
+            app.window?.rootViewController = tab;
+            app.window?.makeKeyAndVisible();
+            
+        
+        }
+    static func toPage(){
+        let app = UIApplication.shared.delegate as! AppDelegate
+        let tab = BaseNavigationController.init(rootViewController: HPage().v_viewController())
+        app.window?.rootViewController = tab;
+        app.window?.makeKeyAndVisible();
+        
+    
     }
 }
 extension UIApplication {

@@ -35,12 +35,12 @@ class SelectionBar1:Vue,GetViewProtocol{
       array.append(BannerCellModel())
        
        
-       array.append(Content101CellModel())
-       array.append(Content102CellModel())
-       array.append(Content103CellModel())
-       array.append(Content104CellModel())
-       array.append(Content105CellModel())
-       array.append(Content106CellModel())
+       array.append(Content101())
+       array.append(Content102())
+       array.append(Content103())
+       array.append(Content104())
+       array.append(Content105())
+       array.append(Content106())
        
 
 

@@ -16,15 +16,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         Cells.registerCells()
-        application.changeMethod(UIApplication.classForCoder())
+//        application.changeMethod(UIApplication.classForCoder())
 
-        UIViewController.toMain()
-
-
+//        UIViewController.toMain()
+//        UIViewController.toProject()
 //        UIViewController.toHome()
 //        UIViewController.toLogin()
+        UIViewController.toPage()
 
-        
 
         return true
     }

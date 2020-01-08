@@ -35,9 +35,7 @@ class SelectionBar3:Vue,GetViewProtocol{
        array.append(Content301CellModel())
        array.append(Content302CellModel())
        array.append(Content303CellModel())
-       array.append(MineCellModel())
-       array.append(MineTabCellModel())
-       array.append(MineSetupCellModel())
+       
 
 
        self.v_array(vId: ARRAYID) { () -> Array<VueData>? in

@@ -1,19 +1,18 @@
 //
-//  Details.swift
+//  HPageAdd.swift
 //  Demo
 //
-//  Created by apple on 2019/11/25.
+//  Created by apple on 2019/12/26.
 //  Copyright © 2019 test. All rights reserved.
 //
 
-
 import UIKit
 import VueSwift
-class Details:Vue,V_ViewControllerProtocol{
+class HPageAdd:Vue,V_ViewControllerProtocol{
     var arrayNav = [VueData]()
     var arrayContent = [VueData]()
-    var r = Record()
-    let bar = SelectionBar()
+    var title:String?
+    var bar = SelectionBar()
 
     func v_viewController() -> UIViewController{
         let vc = TableViewController()
@@ -26,7 +25,6 @@ class Details:Vue,V_ViewControllerProtocol{
         dealNav()
         dealContent()
       
-        r.array = self.arrayContent
     }
     private func dealStatus(){
         
@@ -39,7 +37,7 @@ class Details:Vue,V_ViewControllerProtocol{
     private func dealNav(){
         
         let m = NavBackCellModel()
-        m.name = r.title
+        m.name = title
         self.arrayNav.append(m)
         self.v_array(vId: NAVARRAYID) { () -> Array<VueData>? in
             return self.arrayNav
@@ -52,15 +50,14 @@ class Details:Vue,V_ViewControllerProtocol{
         
     }
     private func dealContent(){
-        if let array = self.r.array{
-            for value in array{
-                self.arrayContent.append(value)
-            }
-        }else{
-            
-            self.arrayContent.append(AddCellModel())
-
+        
+        if let name = title{
+            self.arrayContent = PageCache.analysisCompenents(name)
         }
+        self.arrayContent.append(AddCellModel())
+
+//        self.arrayContent = DataSource.readLocalData()
+
       
        self.v_array(vId: ARRAYID) { () -> Array<VueData>? in
            return self.arrayContent
@@ -82,8 +79,11 @@ class Details:Vue,V_ViewControllerProtocol{
                         return self.arrayContent
                                
                     }
-                    self.r.array = self.arrayContent
 
+                    if let name = self.title{
+                        PageCache.cacheCompenent(name, data)
+
+                    }
                 }
                 
             }else{
@@ -92,30 +92,17 @@ class Details:Vue,V_ViewControllerProtocol{
                      self.arrayContent.remove(at:index)
                      self.v_array(vId: ARRAYID) { () -> Array<VueData>? in
                          return self.arrayContent
-                                
                      }
-                     self.r.array = self.arrayContent
-                     return
-                    
-                }
-                if let r = self.r.record{
-                 
-                     let m = Details()
-                     m.r = r
-                     Router.push(m, nil, nil)
+                     if let name = self.title{
+                         PageCache.deleteCacheCompenent(name, index)
+                     }
                     
                 }else{
-                    Alert.editorContent("请输入标题"){ (str) in
-
-                         let m = Details()
-                         self.r.record = m.r
-                         m.r.title = str
-                         Router.push(m, nil, nil)
-                                          
-                                          
-                    }
-                 
+                    
+                    
+                    
                 }
+                
                 
             }
           

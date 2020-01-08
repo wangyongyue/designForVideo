@@ -29,39 +29,14 @@ class SelectionBar:Vue{
        var array = [VueData]()
         
         
-        array.append(BannerCellModel())
-        
-        array.append(Content201CellModel())
-        array.append(Content202CellModel())
-        array.append(Content105CellModel())
+//        array.append(BannerCellModel())
+        array.append(Content101(DataStyle.loadStyle(NSStringFromClass(Content101.classForCoder()))))
+        array.append(Content102(DataStyle.loadStyle(NSStringFromClass(Content102.classForCoder()))))
+        array.append(Content103(DataStyle.loadStyle(NSStringFromClass(Content103.classForCoder()))))
+        array.append(Content104(DataStyle.loadStyle(NSStringFromClass(Content104.classForCoder()))))
+        array.append(Content105(DataStyle.loadStyle(NSStringFromClass(Content105.classForCoder()))))
+        array.append(Content106(DataStyle.loadStyle(NSStringFromClass(Content106.classForCoder()))))
 
-        array.append(Content203CellModel())
-        array.append(Content204CellModel())
-        array.append(Content205CellModel())
-        
-        
-        array.append(Content106CellModel())
-        array.append(Content101CellModel())
-        array.append(Content102CellModel())
-        array.append(Content104CellModel())
-
-        
-        
-        array.append(Content301CellModel())
-        array.append(Content302CellModel())
-        array.append(Content303CellModel())
-        
-
-        array.append(Content206CellModel())
-        array.append(Content103CellModel())
-
-        
-        
-        array.append(MineCellModel())
-        array.append(MineTabCellModel())
-        array.append(MineSetupCellModel())
-
-     
 
        self.v_array(vId: ARRAYID) { () -> Array<VueData>? in
            return array
@@ -70,9 +45,14 @@ class SelectionBar:Vue{
         
        self.v_index(vId: INDEXID) { (index) in
             
-         let data = array[index] as! VueData
-         self.block?(data)
-        self.view?.removeFromSuperview()
+        let a = array[index]
+        if let classType = a.classForCoder as? VueData.Type {
+            let model = classType.init()
+            if let dic = DataStyle.loadStyle(NSStringFromClass(a.classForCoder)){
+                model.loadData(dic)
+            }
+            self.block?(model)
+        }
         
        }
         

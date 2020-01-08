@@ -10,13 +10,6 @@ import UIKit
 import VueSwift
 class Content105Cell: UITableViewCell {
     
-    lazy private var headImage:UIImageView = {
-        let a = UIImageView()
-        a.layer.cornerRadius = 12
-        a.layer.masksToBounds = true
-        a.image = UIImage.init(named: "know_tou")
-        return a
-    }()
     lazy private var deleteButton:UIButton = {
         let a = UIButton()
         a.setImage(UIImage.init(named: "file_delete"), for: .normal)
@@ -24,163 +17,121 @@ class Content105Cell: UITableViewCell {
         return a
     }()
     
-    lazy private var nameLabel:UILabel = {
-        let a = UILabel()
-        a.textAlignment = .left
-        a.font = UIFont.boldSystemFont(ofSize: 12)
-        a.text = "数据数据"
-        return a
-    }()
-    lazy private var toDoLabel:UILabel = {
-        let a = UILabel()
-        a.textAlignment = .left
-        a.font = UIFont.boldSystemFont(ofSize: 12)
-        a.textColor = UIColor.lightGray
-        a.text = "数据数据"
+    lazy private var headerLabel1:UILabel = {
+         let a = UILabel()
+         a.textAlignment = .left
+         a.text = "数据数据数据数据"
+         a.numberOfLines = 1
+         return a
+     }()
+     
+     
+     lazy private var headerLabel2:UILabel = {
+         let a = UILabel()
+         a.textAlignment = .left
+         a.text = "数据数据数据数据"
+         a.numberOfLines = 1
+         return a
+     }()
+     
+     lazy private var bigImage:UIImageView = {
+         let a = UIImageView()
+         a.layer.cornerRadius = 6
+         a.layer.masksToBounds = true
+         a.image = UIImage.init(named: Image.fillImage("che5"))
 
-        return a
-    }()
-    lazy private var timeLabel:UILabel = {
-        let a = UILabel()
-        a.textAlignment = .right
-        a.font = UIFont.boldSystemFont(ofSize: 12)
-        a.textColor = UIColor.lightGray
-        a.text = "数据数据"
+         a.contentMode = .scaleAspectFill
 
-        return a
-    }()
-    lazy private var headerLabel:UILabel = {
-        let a = UILabel()
-        a.textAlignment = .left
-        a.text = "数据数据数据数据数据数据数据数据数据"
-        a.numberOfLines = 0
-        return a
-    }()
+         return a
+     }()
+     lazy private var line:UIView = {
+         let a = UIView()
+         a.backgroundColor = bgColor
+         return a
+     }()
     
-    lazy private var zhuanButton:UIButton = {
-        let a = UIButton()
-        a.setImage(UIImage.init(named: "know_share"), for: .normal)
-        a.setTitle("数据", for: .normal)
-        a.setTitleColor(UIColor.lightGray, for: .normal)
-        a.titleLabel?.font = UIFont.boldSystemFont(ofSize: 12)
+     lazy private var tap:UITapGestureRecognizer = {
+         let a = UITapGestureRecognizer()
+         return a
+     }()
+     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
+         super.init(style: style, reuseIdentifier: reuseIdentifier)
+         
+         self.contentView.addSubview(self.bigImage)
+         
+         self.contentView.addSubview(self.headerLabel1)
+         self.contentView.addSubview(self.headerLabel2)
 
-        return a
-    }()
-    
-    lazy private var pinglunButton:UIButton = {
-        let a = UIButton()
-        a.setImage(UIImage.init(named: "know_pinglun"), for: .normal)
-        a.setTitle("数据", for: .normal)
-        a.setTitleColor(UIColor.lightGray, for: .normal)
-        a.titleLabel?.font = UIFont.boldSystemFont(ofSize: 12)
 
-        return a
-    }()
-    
-    lazy private var zanButton:UIButton = {
-        let a = UIButton()
-        a.setImage(UIImage.init(named: "know_zan"), for: .normal)
-        a.setTitle("数据", for: .normal)
-        a.setTitleColor(UIColor.lightGray, for: .normal)
-        a.titleLabel?.font = UIFont.boldSystemFont(ofSize: 12)
-        return a
-    }()
-    
-    lazy private var bigImage:UIImageView = {
-        let a = UIImageView()
-        a.layer.cornerRadius = 6
-        a.layer.masksToBounds = true
-        a.image = UIImage.init(named: Image.fillImage("feng_2"))
-
-        a.contentMode = .scaleAspectFill
-
-        return a
-    }()
-    
-    
-    lazy private var line:UIView = {
-        let a = UIView()
-        a.backgroundColor = bgColor
-        return a
-    }()
-    lazy private var tap:UITapGestureRecognizer = {
-        let a = UITapGestureRecognizer()
-        return a
-    }()
-    override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
-        super.init(style: style, reuseIdentifier: reuseIdentifier)
         
-        self.contentView.addSubview(self.headImage)
-        self.contentView.addSubview(self.bigImage)
+        
+        
+         let w = 130
 
-        self.contentView.addSubview(self.nameLabel)
-        self.contentView.addSubview(self.toDoLabel)
-        self.contentView.addSubview(self.timeLabel)
-        self.contentView.addSubview(self.headerLabel)
+         self.bigImage.snp.makeConstraints { (make) in
+             
+             make.top.equalTo(20)
+             make.left.equalTo(12)
+             make.right.equalTo(-12)
+             make.height.equalTo(w)
+             
+         }
+        
+         self.headerLabel1.snp.makeConstraints { (make) in
+             
+             make.left.equalTo(12)
+             make.top.equalTo(self.bigImage.snp_bottomMargin).offset(20)
+            make.right.equalTo(-12)
 
-        self.contentView.addSubview(self.zhuanButton)
-        self.contentView.addSubview(self.pinglunButton)
-        self.contentView.addSubview(self.zanButton)
+         }
+         self.headerLabel2.snp.makeConstraints { (make) in
+             
+             make.left.equalTo(12)
+             make.top.equalTo(self.headerLabel1.snp_bottomMargin).offset(20)
+            make.right.equalTo(-12)
+
+         }
+        
+         self.contentView.addSubview(self.line)
+
+         self.line.snp.makeConstraints { (make) in
+             
+             make.height.equalTo(0.5)
+             make.left.equalTo(12)
+             make.right.equalTo(-12)
+             make.bottom.equalTo(0)
+             
+         }
+         self.contentView.addGestureRecognizer(tap)
         
         self.contentView.addSubview(self.deleteButton)
-
-        
-        
-        self.contentView.addSubview(self.line)
-
-      
         self.deleteButton.snp.makeConstraints { (make) in
             
             make.top.equalTo(0)
             make.right.equalTo(0)
 
         }
-        
-        self.bigImage.snp.makeConstraints { (make) in
-            
-            make.top.equalTo(10)
-            make.right.equalTo(-12)
-            make.height.equalTo(100)
-            make.width.equalTo(80)
-            
-        }
-       
-      
-        self.headerLabel.snp.makeConstraints { (make) in
-            
-            make.top.equalTo(self.bigImage)
-            make.left.equalTo(12)
-            make.right.equalTo(-130)
-            
-        }
-        self.toDoLabel.snp.makeConstraints { (make) in
-            
-            make.bottom.equalTo(-20)
-            make.left.equalTo(12)
-            make.right.equalTo(-130)
-            
-        }
-       
-        
-        self.line.snp.makeConstraints { (make) in
-            
-            make.height.equalTo(0.5)
-            make.left.equalTo(0)
-            make.right.equalTo(0)
-            make.bottom.equalTo(0)
-            
-        }
-        
-        self.contentView.addGestureRecognizer(tap)
-    }
-    required init?(coder aDecoder: NSCoder) {
-        super.init(coder: aDecoder)
-    }
+     }
+     required init?(coder aDecoder: NSCoder) {
+         super.init(coder: aDecoder)
+     }
+  
     override func setV_Model(_ aModel: VueData) {
-        if aModel is Content105CellModel{
+        if aModel is Content105{
+            let m = aModel as! Content105
             
-            let m = aModel as! Content105CellModel
-            deleteButton.v_click{
+            if let a = m.name,let b = m.source,let c = m.imageName{
+                headerLabel1.text = a
+                headerLabel2.text = b
+                bigImage.image = UIImage.init(named: Image.fillImage(c))
+            }else{
+                headerLabel1.text = "数据数据数据数据"
+                headerLabel2.text = "数据数据数据数据"
+                bigImage.image = UIImage.init(named: Image.fillImage("che1"))
+            }
+           
+            deleteButton.isHidden = m.isH
+            deleteButton.v_click {
                 
                 m.v_identifier = 1
                 m.v_to()
@@ -193,13 +144,34 @@ class Content105Cell: UITableViewCell {
         }
     }
 }
-class Content105CellModel:VueData{
+class Content105:VueData{
     
     var name:String?
+    var source:String?
+    var imageName:String?
     
+    var isH = false
+    convenience init(_ h:Bool){
+        self.init()
+        isH = h
+    }
+    convenience init(_ m: [String : String]?) {
+        self.init()
+        name = m?["title"]
+        source = m?["source"]
+        imageName = m?["imageUrl"]
+        isH = true
+                      
+       }
+    override func loadData(_ m: [String : String]) {
+        name = m["title"]
+        source = m["source"]
+        imageName = m["imageUrl"]
+               
+    }
     override func v_height() -> CGFloat {
         
-        return 120
+        return 230
     }
 }
 

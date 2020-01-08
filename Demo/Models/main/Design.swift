@@ -13,7 +13,7 @@ class Design:Vue,V_ViewControllerProtocol{
     var arrayContent = [VueData]()
     var r = Record()
 
-    let bar = SelectionTabBar()
+    let bar = SelectionBar()
 
     func v_viewController() -> UIViewController{
         let vc = TableViewController()
