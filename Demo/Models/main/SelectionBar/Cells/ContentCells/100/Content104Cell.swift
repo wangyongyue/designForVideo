@@ -163,6 +163,8 @@ class Content104:VueData{
         source = m["source"]
         subTitle = m["subTitle"]
                
+        isH = Configuration.instructions.isSource
+
                
     }
     override func v_height() -> CGFloat {

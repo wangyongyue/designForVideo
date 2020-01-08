@@ -157,7 +157,6 @@ class Content101:VueData{
     }
     convenience init(_ m: [String : String]?) {
         self.init()
-
         
         name = m?["title"]
         source = m?["source"]
@@ -169,7 +168,7 @@ class Content101:VueData{
         name = m["title"]
         source = m["source"]
         imageName = m["imageUrl"]
-//        isH = true
+        isH = Configuration.instructions.isSource
                
     }
    

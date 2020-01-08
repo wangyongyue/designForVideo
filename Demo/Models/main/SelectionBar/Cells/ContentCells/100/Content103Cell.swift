@@ -167,6 +167,8 @@ class Content103:VueData{
         name = m["title"]
         source = m["source"]
         imageName = m["imageUrl"]
+        isH = Configuration.instructions.isSource
+
     }
     override func v_height() -> CGFloat {
         

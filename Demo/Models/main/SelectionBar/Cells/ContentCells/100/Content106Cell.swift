@@ -221,6 +221,8 @@ class Content106:VueData{
         imageCenterUrl = m["imageCenterUrl"]
         imageFooterUrl = m["imageFooterUrl"]
 
+        isH = Configuration.instructions.isSource
+
                
     }
     override func v_height() -> CGFloat {
