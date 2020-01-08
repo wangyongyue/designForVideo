@@ -44,9 +44,8 @@ class HPageAdd:Vue,V_ViewControllerProtocol{
         }
         self.v_index(vId: NAVINDEXID) { (index) in
             
-           
-            
         }
+        
         
     }
     private func dealContent(){

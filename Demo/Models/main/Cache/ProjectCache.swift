@@ -157,7 +157,6 @@ class PageCache: NSObject {
                         data.loadData(dic)
                     }
                     appTitles.append(data)
-
                 }
             }
         }

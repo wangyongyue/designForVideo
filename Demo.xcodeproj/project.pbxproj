@@ -111,6 +111,9 @@
 		45985A8122ED885E00FB19F4 /* Menu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45985A8022ED885E00FB19F4 /* Menu.swift */; };
 		45985A8322ED894F00FB19F4 /* MenuData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45985A8222ED894F00FB19F4 /* MenuData.swift */; };
 		45B04B58237DB2F9002B650B /* TabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45B04B57237DB2F9002B650B /* TabView.swift */; };
+		45EC7B0D23C6241300584168 /* Soure1.json in Resources */ = {isa = PBXBuildFile; fileRef = 45EC7B0C23C6241300584168 /* Soure1.json */; };
+		45EC7B0F23C6259900584168 /* Soure2.json in Resources */ = {isa = PBXBuildFile; fileRef = 45EC7B0E23C6259900584168 /* Soure2.json */; };
+		45EC7B1223C6268A00584168 /* AutoPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45EC7B1123C6268A00584168 /* AutoPage.swift */; };
 		B617D314845B89B19697980D /* Pods_Demo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 42FFFBDD17AFD3F17E4B29D5 /* Pods_Demo.framework */; };
 		D44991443EF71FB9075AD326 /* Pods_DemoUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CFB92A2976401FA38EB89D96 /* Pods_DemoUITests.framework */; };
 /* End PBXBuildFile section */
@@ -244,6 +247,9 @@
 		45985A8022ED885E00FB19F4 /* Menu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Menu.swift; sourceTree = "<group>"; };
 		45985A8222ED894F00FB19F4 /* MenuData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuData.swift; sourceTree = "<group>"; };
 		45B04B57237DB2F9002B650B /* TabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabView.swift; sourceTree = "<group>"; };
+		45EC7B0C23C6241300584168 /* Soure1.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Soure1.json; sourceTree = "<group>"; };
+		45EC7B0E23C6259900584168 /* Soure2.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Soure2.json; sourceTree = "<group>"; };
+		45EC7B1123C6268A00584168 /* AutoPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutoPage.swift; sourceTree = "<group>"; };
 		5A111DE660BB3C699F05D563 /* Pods-Demo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Demo.release.xcconfig"; path = "Target Support Files/Pods-Demo/Pods-Demo.release.xcconfig"; sourceTree = "<group>"; };
 		6B3527A4D3CA321520E453EF /* Pods-DemoUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DemoUITests.release.xcconfig"; path = "Target Support Files/Pods-DemoUITests/Pods-DemoUITests.release.xcconfig"; sourceTree = "<group>"; };
 		7821C1C7F7555F4E07756901 /* Pods_DemoTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DemoTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -299,6 +305,8 @@
 			children = (
 				1827CC0323C589EA00BF9492 /* DataSource.swift */,
 				1827CC0623C59B2100BF9492 /* Soure.json */,
+				45EC7B0C23C6241300584168 /* Soure1.json */,
+				45EC7B0E23C6259900584168 /* Soure2.json */,
 				1827CC0823C5A7C800BF9492 /* Example.json */,
 			);
 			path = DataSource;
@@ -400,6 +408,7 @@
 				18A372B9238B744700F0A1BB /* Main.swift */,
 				18A372CC238B84C400F0A1BB /* Design.swift */,
 				18A372CA238B812900F0A1BB /* Details.swift */,
+				45EC7B1023C6265800584168 /* AutoPage */,
 				18BEF5B223B45D930018E4A9 /* Projects */,
 				183E79CE238BB0310031E3A2 /* TabSelectionBar */,
 				18A372BC238B759900F0A1BB /* NavSelectionBar */,
@@ -686,6 +695,14 @@
 			path = tabCell;
 			sourceTree = "<group>";
 		};
+		45EC7B1023C6265800584168 /* AutoPage */ = {
+			isa = PBXGroup;
+			children = (
+				45EC7B1123C6268A00584168 /* AutoPage.swift */,
+			);
+			path = AutoPage;
+			sourceTree = "<group>";
+		};
 		541B328BABE8FA40933D1E55 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -818,7 +835,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				1827CC0923C5A7C800BF9492 /* Example.json in Resources */,
+				45EC7B0F23C6259900584168 /* Soure2.json in Resources */,
 				1827CC0E23C5AA2000BF9492 /* Style1.json in Resources */,
+				45EC7B0D23C6241300584168 /* Soure1.json in Resources */,
 				1827CC0723C59B2100BF9492 /* Soure.json in Resources */,
 				1827CC1023C5B1A400BF9492 /* Style2.json in Resources */,
 				18911BC622CB42A5007618B0 /* LaunchScreen.storyboard in Resources */,
@@ -1010,6 +1029,7 @@
 				183E7A16238E69710031E3A2 /* SelectionBar1.swift in Sources */,
 				18911BF522CB4992007618B0 /* Image.swift in Sources */,
 				18B66B3A2384F08E00A3126F /* HeaderCell.swift in Sources */,
+				45EC7B1223C6268A00584168 /* AutoPage.swift in Sources */,
 				45985A8122ED885E00FB19F4 /* Menu.swift in Sources */,
 				457E3658230ECBE300D14847 /* Alert.swift in Sources */,
 				1884C74C237BDEFE00A05B9A /* NavTitleCell.swift in Sources */,

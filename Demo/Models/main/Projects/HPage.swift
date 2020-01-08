@@ -81,20 +81,28 @@ class HPage:Vue,V_ViewControllerProtocol{
        }
         
        self.v_index(vId: INDEXID) { (index) in
+        
+             let so = DataSource()
+             so.sourceStr = "Soure1"
+             let m = AutoPage()
+             m.source = so
+             Router.push(m, nil, nil)
+        
+             return
                 
-        let data = self.arrayContent[index] as! BriefCellModel
-        if data.v_identifier == 1{
-           self.arrayContent.remove(at: index)
-           self.v_array(vId: ARRAYID) { () -> Array<VueData>? in
-               return self.arrayContent
-           }
-            PageCache.remvoeCacheProject(index)
+             let data = self.arrayContent[index] as! BriefCellModel
+             if data.v_identifier == 1{
+                self.arrayContent.remove(at: index)
+                self.v_array(vId: ARRAYID) { () -> Array<VueData>? in
+                    return self.arrayContent
+                }
+                 PageCache.remvoeCacheProject(index)
 
-        }else{
-            let m = HPageAdd()
-            m.title = data.name
-            Router.push(m, nil, nil)
-        }
+             }else{
+                 let m = HPageAdd()
+                 m.title = data.name
+                 Router.push(m, nil, nil)
+             }
         
         
         }
