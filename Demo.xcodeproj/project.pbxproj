@@ -121,6 +121,7 @@
 		45EC7B0D23C6241300584168 /* Soure1.json in Resources */ = {isa = PBXBuildFile; fileRef = 45EC7B0C23C6241300584168 /* Soure1.json */; };
 		45EC7B0F23C6259900584168 /* Soure2.json in Resources */ = {isa = PBXBuildFile; fileRef = 45EC7B0E23C6259900584168 /* Soure2.json */; };
 		45EC7B1223C6268A00584168 /* AutoPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45EC7B1123C6268A00584168 /* AutoPage.swift */; };
+		45EC7B1623C76A4C00584168 /* HPageAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45EC7B1523C76A4C00584168 /* HPageAlert.swift */; };
 		B617D314845B89B19697980D /* Pods_Demo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 42FFFBDD17AFD3F17E4B29D5 /* Pods_Demo.framework */; };
 		D44991443EF71FB9075AD326 /* Pods_DemoUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CFB92A2976401FA38EB89D96 /* Pods_DemoUITests.framework */; };
 /* End PBXBuildFile section */
@@ -264,6 +265,7 @@
 		45EC7B0C23C6241300584168 /* Soure1.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Soure1.json; sourceTree = "<group>"; };
 		45EC7B0E23C6259900584168 /* Soure2.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Soure2.json; sourceTree = "<group>"; };
 		45EC7B1123C6268A00584168 /* AutoPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutoPage.swift; sourceTree = "<group>"; };
+		45EC7B1523C76A4C00584168 /* HPageAlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HPageAlert.swift; sourceTree = "<group>"; };
 		5A111DE660BB3C699F05D563 /* Pods-Demo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Demo.release.xcconfig"; path = "Target Support Files/Pods-Demo/Pods-Demo.release.xcconfig"; sourceTree = "<group>"; };
 		6B3527A4D3CA321520E453EF /* Pods-DemoUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DemoUITests.release.xcconfig"; path = "Target Support Files/Pods-DemoUITests/Pods-DemoUITests.release.xcconfig"; sourceTree = "<group>"; };
 		7821C1C7F7555F4E07756901 /* Pods_DemoTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DemoTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -675,6 +677,7 @@
 				18BEF5BB23B4615C0018E4A9 /* HInterface.swift */,
 				18BEF5BD23B461710018E4A9 /* HInterfaceAdd.swift */,
 				1827CC3423C6CF8A00BF9492 /* HStyle.swift */,
+				45EC7B1423C76A3400584168 /* HPageAlert */,
 			);
 			path = Projects;
 			sourceTree = "<group>";
@@ -730,6 +733,14 @@
 				45EC7B1123C6268A00584168 /* AutoPage.swift */,
 			);
 			path = AutoPage;
+			sourceTree = "<group>";
+		};
+		45EC7B1423C76A3400584168 /* HPageAlert */ = {
+			isa = PBXGroup;
+			children = (
+				45EC7B1523C76A4C00584168 /* HPageAlert.swift */,
+			);
+			path = HPageAlert;
 			sourceTree = "<group>";
 		};
 		541B328BABE8FA40933D1E55 /* Frameworks */ = {
@@ -1076,6 +1087,7 @@
 				18A3E40C22FBC5210010E560 /* MenuCell.swift in Sources */,
 				18911C0722CB51DC007618B0 /* BaseNavigationController.swift in Sources */,
 				18B66B54238511AE00A3126F /* LoginHeaderCell.swift in Sources */,
+				45EC7B1623C76A4C00584168 /* HPageAlert.swift in Sources */,
 				18B66B50238511AE00A3126F /* LoginPasswordCell.swift in Sources */,
 				183E79D7238BB1730031E3A2 /* TabHHMMCell.swift in Sources */,
 				18BEF5C923B482C70018E4A9 /* ProjectCache.swift in Sources */,

@@ -22,8 +22,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 //        UIViewController.toHome()
 //        UIViewController.toLogin()
         
-//        UIViewController.toProject()
-        UIViewController.toPage()
+        UIViewController.toProject()
+//        UIViewController.toPage()
 //        UIViewController.toAutoPage()
 
 

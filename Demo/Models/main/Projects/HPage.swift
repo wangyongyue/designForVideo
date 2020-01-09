@@ -37,7 +37,7 @@ class HPage:Vue,V_ViewControllerProtocol{
     private func dealNav(){
         
         let m = NavAddCellModel()
-        m.name = "页面"
+        m.name = "单页"
         self.arrayNav.append(m)
         self.v_array(vId: NAVARRAYID) { () -> Array<VueData>? in
             return self.arrayNav
@@ -49,7 +49,7 @@ class HPage:Vue,V_ViewControllerProtocol{
                            
             }else if m.v_identifier == 2{
                            
-                Alert.editorContent("请输入页面名称"){ (str) in
+                Alert.editorContent("请输入单页名称"){ (str) in
                     let p = PageCache()
                     p.name = str
                     if PageCache.cacheProject(p){

@@ -62,7 +62,7 @@ class PageCache: NSObject {
         for value in PageCache.getCacheArray(){
             if let a = value.name,let b = p.name{
                 if a == b{
-                    Alert.show(str: "页面名称相同，请修改")
+                    Alert.show(str: "单页名称相同，请修改")
                     return false
                 }
                 strings.append(a)
@@ -165,10 +165,76 @@ class PageCache: NSObject {
     }
 }
 
+class InterfacePage :NSObject{
+    
+    var name:String?
+    var page:InterfacePage?
+    func sequencePages() -> String{
+        var dic = [String:String]()
+        dic["name"] = self.name
+        if let p = self.page{
+            
+            dic["page"] = p.sequencePages()
+        }
+        if (!JSONSerialization.isValidJSONObject(dic)) {
+            return ""
+        }
+        let data : NSData! = try? JSONSerialization.data(withJSONObject: dic, options: []) as NSData!
+        let JSONString = NSString(data:data as Data,encoding: String.Encoding.utf8.rawValue)
+        return JSONString! as String
+        
+    }
+    static func analysisPages(_ json:String) -> InterfacePage{
+        
+        let jsonStr = json.replacingOccurrences(of: "\\", with: "")
+        let jsonData:Data = json.data(using: .utf8)!
+        if let dic = try? JSONSerialization.jsonObject(with: jsonData, options: .mutableContainers){
+            if let map = dic as? [String:String]{
+                
+                let d = InterfacePage()
+                if let name = map["name"]{
+                   d.name = name
+                }
+                if let page = map["page"]{
+                    d.page = analysisPages(page)
+                }
+                Debug.log(map)
+                return d
+
+            }
+            
+        }
+        return InterfacePage()
+        
+    }
+    
+    func cachePage(_ name:String){
+        
+        let userDefault = UserDefaults.standard
+        let str = self.sequencePages()
+        userDefault.set(str, forKey: NSStringFromClass(InterfacePage.classForCoder()) + name)
+        Debug.log(str)
+        
+        
+    }
+    static func getCachePage(_ name:String) -> InterfacePage{
+        
+        let userDefault = UserDefaults.standard
+        if let string = userDefault.string(forKey: NSStringFromClass(InterfacePage.classForCoder()) + name){
+            Debug.log(string)
+            let page = InterfacePage.analysisPages(string)
+            return page
+        }
+        return InterfacePage()
+    }
+}
 
 class InterfaceCache: NSObject {
     
+    static let instance = InterfaceCache()
+
     var name:String?
+    var interPage:InterfacePage?
     
     static func cacheProject(_ p:InterfaceCache) -> Bool{
         
@@ -177,7 +243,7 @@ class InterfaceCache: NSObject {
         for value in InterfaceCache.getCacheArray(){
             if let a = value.name,let b = p.name{
                 if a == b{
-                    Alert.show(str: "接口名称相同，请修改")
+                    Alert.show(str: "模块名称相同，请修改")
                     return false
                 }
                 strings.append(a)
@@ -208,5 +274,26 @@ class InterfaceCache: NSObject {
         Debug.log(ps)
         return ps
     }
+    
+    static func remvoeCacheProject(_ n:Int) -> Bool{
+        
+        let userDefault = UserDefaults.standard
+        var strings = [String]()
+        for (index,value) in InterfaceCache.getCacheArray().enumerated(){
+            if index != n{
+                if let a = value.name{
+                    strings.append(a)
+
+                }
+            }
+        }
+
+        Debug.log(strings)
+        userDefault.set(strings, forKey: NSStringFromClass(InterfaceCache.classForCoder()))
+        return true
+    }
+    
+   
+    
     
 }

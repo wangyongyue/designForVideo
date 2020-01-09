@@ -89,9 +89,12 @@ class KnowledgeInstructions: Configuration {
            
         let tab = BaseTabBarController()
 
-        tab.addChildVC(childVC: HProject().v_viewController(), childTitle: "项目", image: UIImage.init(named: "konw_1"), selectedImage:UIImage.init(named: "konw_1"))
-        tab.addChildVC(childVC: HPage().v_viewController(), childTitle: "页面", image: UIImage.init(named: "konw_1"), selectedImage:UIImage.init(named: "konw_1"))
-        tab.addChildVC(childVC: HInterface().v_viewController(), childTitle: "接口", image: UIImage.init(named: "konw_1"), selectedImage:UIImage.init(named: "konw_1"))
+//        tab.addChildVC(childVC: HProject().v_viewController(), childTitle: "项目", image: UIImage.init(named: "konw_1"), selectedImage:UIImage.init(named: "konw_1"))
+        
+        tab.addChildVC(childVC: HInterface().v_viewController(), childTitle: "模块", image: UIImage.init(named: "konw_1"), selectedImage:UIImage.init(named: "konw_1"))
+        
+        tab.addChildVC(childVC: HPage().v_viewController(), childTitle: "单页", image: UIImage.init(named: "konw_1"), selectedImage:UIImage.init(named: "konw_1"))
+
         tab.addChildVC(childVC: HStyle().v_viewController(), childTitle: "组件样式", image: UIImage.init(named: "konw_1"), selectedImage:UIImage.init(named: "konw_1"))
 
         
