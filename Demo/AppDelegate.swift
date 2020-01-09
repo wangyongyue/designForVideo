@@ -19,9 +19,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         application.changeMethod(UIApplication.classForCoder())
 
 //        UIViewController.toMain()
-//        UIViewController.toProject()
 //        UIViewController.toHome()
 //        UIViewController.toLogin()
+        
+//        UIViewController.toProject()
         UIViewController.toPage()
 //        UIViewController.toAutoPage()
 

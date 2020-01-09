@@ -102,7 +102,7 @@ extension UIViewController{
         let app = UIApplication.shared.delegate as! AppDelegate
         Configuration.instructions.isSource = false
 
-        let tab = BaseNavigationController.init(rootViewController: HPage().v_viewController())
+        let tab = BaseNavigationController.init(rootViewController: SPage().v_viewController())
         app.window?.rootViewController = tab;
         app.window?.makeKeyAndVisible();
         

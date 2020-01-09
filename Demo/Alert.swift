@@ -186,7 +186,7 @@ class Alert: UIView {
         let v = UIView()
         
         if Configuration.instructions.imageDefault{
-            v.backgroundColor = UIColor.init(white: 1.0, alpha: 0.9)
+            v.backgroundColor = UIColor.init(white: 0.6, alpha: 0.6)
 
         }else{
             
@@ -237,7 +237,7 @@ class Alert: UIView {
         let v = UIView()
         
         if Configuration.instructions.imageDefault{
-            v.backgroundColor = UIColor.init(white: 1.0, alpha: 0.9)
+            v.backgroundColor = UIColor.init(white: 0.6, alpha: 0.6)
 
         }else{
             

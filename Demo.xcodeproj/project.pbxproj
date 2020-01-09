@@ -15,6 +15,12 @@
 		1827CC0E23C5AA2000BF9492 /* Style1.json in Resources */ = {isa = PBXBuildFile; fileRef = 1827CC0D23C5AA2000BF9492 /* Style1.json */; };
 		1827CC1023C5B1A400BF9492 /* Style2.json in Resources */ = {isa = PBXBuildFile; fileRef = 1827CC0F23C5B1A400BF9492 /* Style2.json */; };
 		1827CC2823C6B9BD00BF9492 /* Soure3.json in Resources */ = {isa = PBXBuildFile; fileRef = 1827CC2723C6B9BD00BF9492 /* Soure3.json */; };
+		1827CC2A23C6C50C00BF9492 /* Style3.json in Resources */ = {isa = PBXBuildFile; fileRef = 1827CC2923C6C50C00BF9492 /* Style3.json */; };
+		1827CC2C23C6C51800BF9492 /* Style4.json in Resources */ = {isa = PBXBuildFile; fileRef = 1827CC2B23C6C51800BF9492 /* Style4.json */; };
+		1827CC2E23C6C52400BF9492 /* Style5.json in Resources */ = {isa = PBXBuildFile; fileRef = 1827CC2D23C6C52400BF9492 /* Style5.json */; };
+		1827CC3123C6CEBB00BF9492 /* SPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1827CC3023C6CEBB00BF9492 /* SPage.swift */; };
+		1827CC3323C6CEC100BF9492 /* SPageAdd.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1827CC3223C6CEC100BF9492 /* SPageAdd.swift */; };
+		1827CC3523C6CF8A00BF9492 /* HStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1827CC3423C6CF8A00BF9492 /* HStyle.swift */; };
 		183E79D0238BB0510031E3A2 /* TabSelectionBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 183E79CF238BB0510031E3A2 /* TabSelectionBar.swift */; };
 		183E79D3238BB0970031E3A2 /* TabHMCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 183E79D2238BB0970031E3A2 /* TabHMCell.swift */; };
 		183E79D5238BB0A80031E3A2 /* TabHMMCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 183E79D4238BB0A80031E3A2 /* TabHMMCell.swift */; };
@@ -144,6 +150,12 @@
 		1827CC0D23C5AA2000BF9492 /* Style1.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Style1.json; sourceTree = "<group>"; };
 		1827CC0F23C5B1A400BF9492 /* Style2.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Style2.json; sourceTree = "<group>"; };
 		1827CC2723C6B9BD00BF9492 /* Soure3.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Soure3.json; sourceTree = "<group>"; };
+		1827CC2923C6C50C00BF9492 /* Style3.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Style3.json; sourceTree = "<group>"; };
+		1827CC2B23C6C51800BF9492 /* Style4.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Style4.json; sourceTree = "<group>"; };
+		1827CC2D23C6C52400BF9492 /* Style5.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Style5.json; sourceTree = "<group>"; };
+		1827CC3023C6CEBB00BF9492 /* SPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SPage.swift; sourceTree = "<group>"; };
+		1827CC3223C6CEC100BF9492 /* SPageAdd.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SPageAdd.swift; sourceTree = "<group>"; };
+		1827CC3423C6CF8A00BF9492 /* HStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HStyle.swift; sourceTree = "<group>"; };
 		183E79CF238BB0510031E3A2 /* TabSelectionBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabSelectionBar.swift; sourceTree = "<group>"; };
 		183E79D2238BB0970031E3A2 /* TabHMCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabHMCell.swift; sourceTree = "<group>"; };
 		183E79D4238BB0A80031E3A2 /* TabHMMCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabHMMCell.swift; sourceTree = "<group>"; };
@@ -321,8 +333,20 @@
 				1827CC0B23C5A9E200BF9492 /* DataStyle.swift */,
 				1827CC0D23C5AA2000BF9492 /* Style1.json */,
 				1827CC0F23C5B1A400BF9492 /* Style2.json */,
+				1827CC2923C6C50C00BF9492 /* Style3.json */,
+				1827CC2B23C6C51800BF9492 /* Style4.json */,
+				1827CC2D23C6C52400BF9492 /* Style5.json */,
 			);
 			path = DataStyle;
+			sourceTree = "<group>";
+		};
+		1827CC2F23C6CE9F00BF9492 /* SPage */ = {
+			isa = PBXGroup;
+			children = (
+				1827CC3023C6CEBB00BF9492 /* SPage.swift */,
+				1827CC3223C6CEC100BF9492 /* SPageAdd.swift */,
+			);
+			path = SPage;
 			sourceTree = "<group>";
 		};
 		183E79CE238BB0310031E3A2 /* TabSelectionBar */ = {
@@ -411,6 +435,7 @@
 				18A372B9238B744700F0A1BB /* Main.swift */,
 				18A372CC238B84C400F0A1BB /* Design.swift */,
 				18A372CA238B812900F0A1BB /* Details.swift */,
+				1827CC2F23C6CE9F00BF9492 /* SPage */,
 				45EC7B1023C6265800584168 /* AutoPage */,
 				18BEF5B223B45D930018E4A9 /* Projects */,
 				183E79CE238BB0310031E3A2 /* TabSelectionBar */,
@@ -649,6 +674,7 @@
 				18BEF5C123B4619F0018E4A9 /* HPageAdd.swift */,
 				18BEF5BB23B4615C0018E4A9 /* HInterface.swift */,
 				18BEF5BD23B461710018E4A9 /* HInterfaceAdd.swift */,
+				1827CC3423C6CF8A00BF9492 /* HStyle.swift */,
 			);
 			path = Projects;
 			sourceTree = "<group>";
@@ -841,10 +867,13 @@
 				45EC7B0F23C6259900584168 /* Soure2.json in Resources */,
 				1827CC2823C6B9BD00BF9492 /* Soure3.json in Resources */,
 				1827CC0E23C5AA2000BF9492 /* Style1.json in Resources */,
+				1827CC2E23C6C52400BF9492 /* Style5.json in Resources */,
+				1827CC2C23C6C51800BF9492 /* Style4.json in Resources */,
 				45EC7B0D23C6241300584168 /* Soure1.json in Resources */,
 				1827CC0723C59B2100BF9492 /* Soure.json in Resources */,
 				1827CC1023C5B1A400BF9492 /* Style2.json in Resources */,
 				18911BC622CB42A5007618B0 /* LaunchScreen.storyboard in Resources */,
+				1827CC2A23C6C50C00BF9492 /* Style3.json in Resources */,
 				457E365523097C3700D14847 /* Assets.xcassets in Resources */,
 				18911BC122CB4281007618B0 /* Main.storyboard in Resources */,
 			);
@@ -986,6 +1015,7 @@
 				18BEF5BC23B4615C0018E4A9 /* HInterface.swift in Sources */,
 				183E7A09238E2C0B0031E3A2 /* BannerCell.swift in Sources */,
 				1884C719237BB45600A05B9A /* AlertView.swift in Sources */,
+				1827CC3123C6CEBB00BF9492 /* SPage.swift in Sources */,
 				18A372C7238B76EC00F0A1BB /* AddCell.swift in Sources */,
 				18BEF5BE23B461710018E4A9 /* HInterfaceAdd.swift in Sources */,
 				18BEF5C223B4619F0018E4A9 /* HPageAdd.swift in Sources */,
@@ -1049,6 +1079,7 @@
 				18B66B50238511AE00A3126F /* LoginPasswordCell.swift in Sources */,
 				183E79D7238BB1730031E3A2 /* TabHHMMCell.swift in Sources */,
 				18BEF5C923B482C70018E4A9 /* ProjectCache.swift in Sources */,
+				1827CC3523C6CF8A00BF9492 /* HStyle.swift in Sources */,
 				18C6D9E1237CE94C00BCF77E /* NavBackCell.swift in Sources */,
 				18A372C9238B77DB00F0A1BB /* AlertTableView.swift in Sources */,
 				18B66B52238511AE00A3126F /* LoginForgetButtonCell.swift in Sources */,
@@ -1056,6 +1087,7 @@
 				18A372CB238B812900F0A1BB /* Details.swift in Sources */,
 				458F053922D6163300271BB4 /* POST.swift in Sources */,
 				18911C0922CB51F6007618B0 /* BaseTabBarController.swift in Sources */,
+				1827CC3323C6CEC100BF9492 /* SPageAdd.swift in Sources */,
 				18911BF722CB49A1007618B0 /* Color.swift in Sources */,
 				45985A7822ED4A2400FB19F4 /* Cells.swift in Sources */,
 				183E79F4238CFF560031E3A2 /* Content202Cell.swift in Sources */,
