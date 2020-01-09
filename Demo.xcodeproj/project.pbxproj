@@ -14,6 +14,7 @@
 		1827CC0C23C5A9E200BF9492 /* DataStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1827CC0B23C5A9E200BF9492 /* DataStyle.swift */; };
 		1827CC0E23C5AA2000BF9492 /* Style1.json in Resources */ = {isa = PBXBuildFile; fileRef = 1827CC0D23C5AA2000BF9492 /* Style1.json */; };
 		1827CC1023C5B1A400BF9492 /* Style2.json in Resources */ = {isa = PBXBuildFile; fileRef = 1827CC0F23C5B1A400BF9492 /* Style2.json */; };
+		1827CC2823C6B9BD00BF9492 /* Soure3.json in Resources */ = {isa = PBXBuildFile; fileRef = 1827CC2723C6B9BD00BF9492 /* Soure3.json */; };
 		183E79D0238BB0510031E3A2 /* TabSelectionBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 183E79CF238BB0510031E3A2 /* TabSelectionBar.swift */; };
 		183E79D3238BB0970031E3A2 /* TabHMCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 183E79D2238BB0970031E3A2 /* TabHMCell.swift */; };
 		183E79D5238BB0A80031E3A2 /* TabHMMCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 183E79D4238BB0A80031E3A2 /* TabHMMCell.swift */; };
@@ -142,6 +143,7 @@
 		1827CC0B23C5A9E200BF9492 /* DataStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataStyle.swift; sourceTree = "<group>"; };
 		1827CC0D23C5AA2000BF9492 /* Style1.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Style1.json; sourceTree = "<group>"; };
 		1827CC0F23C5B1A400BF9492 /* Style2.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Style2.json; sourceTree = "<group>"; };
+		1827CC2723C6B9BD00BF9492 /* Soure3.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Soure3.json; sourceTree = "<group>"; };
 		183E79CF238BB0510031E3A2 /* TabSelectionBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabSelectionBar.swift; sourceTree = "<group>"; };
 		183E79D2238BB0970031E3A2 /* TabHMCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabHMCell.swift; sourceTree = "<group>"; };
 		183E79D4238BB0A80031E3A2 /* TabHMMCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabHMMCell.swift; sourceTree = "<group>"; };
@@ -307,6 +309,7 @@
 				1827CC0623C59B2100BF9492 /* Soure.json */,
 				45EC7B0C23C6241300584168 /* Soure1.json */,
 				45EC7B0E23C6259900584168 /* Soure2.json */,
+				1827CC2723C6B9BD00BF9492 /* Soure3.json */,
 				1827CC0823C5A7C800BF9492 /* Example.json */,
 			);
 			path = DataSource;
@@ -836,6 +839,7 @@
 			files = (
 				1827CC0923C5A7C800BF9492 /* Example.json in Resources */,
 				45EC7B0F23C6259900584168 /* Soure2.json in Resources */,
+				1827CC2823C6B9BD00BF9492 /* Soure3.json in Resources */,
 				1827CC0E23C5AA2000BF9492 /* Style1.json in Resources */,
 				45EC7B0D23C6241300584168 /* Soure1.json in Resources */,
 				1827CC0723C59B2100BF9492 /* Soure.json in Resources */,

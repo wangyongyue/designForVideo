@@ -36,9 +36,15 @@ class AutoPage:Vue,V_ViewControllerProtocol{
     }
     private func dealNav(){
         
-        let m = NavBackCellModel()
-        m.name = title
-        self.arrayNav.append(m)
+        if let so = source{
+            let m = so.laodDataNavigation()
+            self.arrayNav.append(m)
+
+        }else{
+            
+            self.arrayNav.append(NavBackCellModel())
+
+        }
         self.v_array(vId: NAVARRAYID) { () -> Array<VueData>? in
             return self.arrayNav
         }

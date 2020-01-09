@@ -82,14 +82,7 @@ class HPage:Vue,V_ViewControllerProtocol{
         
        self.v_index(vId: INDEXID) { (index) in
         
-             let so = DataSource()
-             so.sourceStr = "Soure1"
-             let m = AutoPage()
-             m.source = so
-             Router.push(m, nil, nil)
-        
-             return
-                
+             
              let data = self.arrayContent[index] as! BriefCellModel
              if data.v_identifier == 1{
                 self.arrayContent.remove(at: index)

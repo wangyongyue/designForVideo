@@ -100,7 +100,24 @@ extension UIViewController{
         }
     static func toPage(){
         let app = UIApplication.shared.delegate as! AppDelegate
+        Configuration.instructions.isSource = false
+
         let tab = BaseNavigationController.init(rootViewController: HPage().v_viewController())
+        app.window?.rootViewController = tab;
+        app.window?.makeKeyAndVisible();
+        
+    
+    }
+    static func toAutoPage(){
+        let app = UIApplication.shared.delegate as! AppDelegate
+        
+        let so = DataSource()
+        so.sourceStr = "Soure1"
+        let m = AutoPage()
+        m.source = so
+        Configuration.instructions.isSource = true
+      
+        let tab = BaseNavigationController.init(rootViewController: m.v_viewController())
         app.window?.rootViewController = tab;
         app.window?.makeKeyAndVisible();
         
