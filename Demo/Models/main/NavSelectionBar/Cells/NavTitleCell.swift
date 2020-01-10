@@ -17,15 +17,28 @@ class NavTitleCell: UITableViewCell {
         label.backgroundColor = UIColor.clear
         return label
     }()
+    let rightButton:UIButton = {
+        let a = UIButton()
+        a.backgroundColor = UIColor.clear
+        a.setImage(UIImage.init(named: "sao"), for: .normal)
+        return a
+    }()
     
    override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         self.backgroundColor = UIColor.clear
 
         self.contentView.addSubview(headerLabel)
+        self.contentView.addSubview(rightButton)
+
         headerLabel.snp.makeConstraints { (make) in
             
             make.center.equalTo(self.contentView)
+        }
+        rightButton.snp.makeConstraints { (make) in
+            
+            make.centerY.equalTo(self.contentView)
+            make.right.equalTo(-10)
         }
         
     
@@ -38,6 +51,10 @@ class NavTitleCell: UITableViewCell {
             let m = aModel as! NavTitleCellModel
             
             headerLabel.text = m.name
+            rightButton.v_click {
+                
+                m.v_to()
+            }
 
         }
     }

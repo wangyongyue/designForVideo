@@ -324,3 +324,103 @@ class InterfaceCache: NSObject {
     
     
 }
+
+
+class CodeCache: NSObject {
+    
+
+    var name:String?
+    
+    func cacheProject() -> Bool{
+        
+        let userDefault = UserDefaults.standard
+        var strings = [String]()
+        for value in CodeCache.getCacheArray(){
+            if let a = value.name,let b = self.name{
+                if a == b{
+                    Alert.show(str: "Page名称相同，请修改")
+                    return false
+                }
+                strings.append(a)
+            }
+            
+        }
+        if let a = self.name{
+            
+            strings.append(a)
+        }
+
+        Debug.log(strings)
+        userDefault.set(strings, forKey: NSStringFromClass(CodeCache.classForCoder()))
+        return true
+    }
+    static func getCacheArray() -> [CodeCache]{
+        
+        let userDefault = UserDefaults.standard
+        var ps = [CodeCache]()
+
+        if let strings = userDefault.stringArray(forKey: NSStringFromClass(CodeCache.classForCoder())){
+            for value in strings{
+                let m = CodeCache()
+                m.name = value
+                ps.append(m)
+            }
+        }
+        Debug.log(ps)
+        return ps
+    }
+    
+    static func remvoeCacheProject(_ n:Int){
+        
+        let userDefault = UserDefaults.standard
+        var strings = [String]()
+        for (index,value) in CodeCache.getCacheArray().enumerated(){
+            if index != n{
+                if let a = value.name{
+                    strings.append(a)
+
+                }
+            }
+        }
+
+        Debug.log(strings)
+        userDefault.set(strings, forKey: NSStringFromClass(CodeCache.classForCoder()))
+    }
+    
+    static func cachePageContents(_ name:String,_ titles:String){
+        
+        let userDefault = UserDefaults.standard
+        var array = [String]()
+        let strs = titles.components(separatedBy: ",")
+        for value in strs{
+            array.append(value)
+        }
+        Debug.log(array)
+        userDefault.set(array, forKey: NSStringFromClass(CodeCache.classForCoder()) + name)
+        
+    }
+    
+    static func getPageContentsArray(_ name:String) -> [VueData]{
+        
+        let userDefault = UserDefaults.standard
+        var datas = [VueData]()
+
+        if let strings = userDefault.stringArray(forKey: NSStringFromClass(CodeCache.classForCoder()) + name){
+            for value in strings{
+               if let classType = NSClassFromString(DataStyle.getAppName() + value) as? VueData.Type {
+                   let data = classType.init()
+                   if let dic = DataStyle.loadStyle(value){
+                        data.loadData(dic,true)
+                    }
+                   datas.append(data)
+               }
+            }
+        }
+
+        Debug.log(datas)
+        return datas
+    }
+   
+    
+    
+}

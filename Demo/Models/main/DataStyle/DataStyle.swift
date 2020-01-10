@@ -15,6 +15,8 @@ class DataStyle: NSObject {
         let instance = DataStyle()
         return instance
     }()
+    
+    
     static func getAppName() -> String{
         
         let infoDictionary = Bundle.main.infoDictionary!
@@ -22,10 +24,10 @@ class DataStyle: NSObject {
         
         return appDisplayName + "."
     }
+    
     static func loadStyle(_ className:String) -> [String:String]?{
         
         //读取本地的文件
-       
         var jsonSource:Any?
         if let source = DataStyle.sharedInstance.style[className]{
             jsonSource = source

@@ -24,6 +24,7 @@ open class VueData:NSObject {
         super.init()
     }
     open func loadData(_ m:[String:String],_ aisH:Bool){
+        
     }
 }
 

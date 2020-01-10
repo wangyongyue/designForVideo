@@ -22,16 +22,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 //        UIViewController.toLogin()
         
         
-        
-        
-        
 //        application.changeMethod(UIApplication.classForCoder())
 
-//          UIViewController.toMain()
-        UIViewController.toProject()
+//        UIViewController.toMain()
+//        UIViewController.toProject()
 //        UIViewController.toPage()
 //        UIViewController.toAutoPage()
-
+          
+          UIViewController.toCodePage()
 
         return true
     }

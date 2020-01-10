@@ -122,6 +122,17 @@ extension UIViewController{
         
     
     }
+    static func toCodePage(){
+        let app = UIApplication.shared.delegate as! AppDelegate
+       
+        let m = Page()
+      
+        let tab = BaseNavigationController.init(rootViewController: m.v_viewController())
+        app.window?.rootViewController = tab;
+        app.window?.makeKeyAndVisible();
+        
+    
+    }
 }
 extension UIApplication {
 

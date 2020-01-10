@@ -122,6 +122,9 @@
 		45EC7B0F23C6259900584168 /* Soure2.json in Resources */ = {isa = PBXBuildFile; fileRef = 45EC7B0E23C6259900584168 /* Soure2.json */; };
 		45EC7B1223C6268A00584168 /* AutoPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45EC7B1123C6268A00584168 /* AutoPage.swift */; };
 		45EC7B1623C76A4C00584168 /* HPageAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45EC7B1523C76A4C00584168 /* HPageAlert.swift */; };
+		45EC7B2023C8B1B000584168 /* PageDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45EC7B1D23C8B1B000584168 /* PageDetails.swift */; };
+		45EC7B2123C8B1B000584168 /* CodeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45EC7B1E23C8B1B000584168 /* CodeViewController.swift */; };
+		45EC7B2223C8B1B000584168 /* Page.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45EC7B1F23C8B1B000584168 /* Page.swift */; };
 		B617D314845B89B19697980D /* Pods_Demo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 42FFFBDD17AFD3F17E4B29D5 /* Pods_Demo.framework */; };
 		D44991443EF71FB9075AD326 /* Pods_DemoUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CFB92A2976401FA38EB89D96 /* Pods_DemoUITests.framework */; };
 /* End PBXBuildFile section */
@@ -266,6 +269,9 @@
 		45EC7B0E23C6259900584168 /* Soure2.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Soure2.json; sourceTree = "<group>"; };
 		45EC7B1123C6268A00584168 /* AutoPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutoPage.swift; sourceTree = "<group>"; };
 		45EC7B1523C76A4C00584168 /* HPageAlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HPageAlert.swift; sourceTree = "<group>"; };
+		45EC7B1D23C8B1B000584168 /* PageDetails.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PageDetails.swift; sourceTree = "<group>"; };
+		45EC7B1E23C8B1B000584168 /* CodeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CodeViewController.swift; sourceTree = "<group>"; };
+		45EC7B1F23C8B1B000584168 /* Page.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Page.swift; sourceTree = "<group>"; };
 		5A111DE660BB3C699F05D563 /* Pods-Demo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Demo.release.xcconfig"; path = "Target Support Files/Pods-Demo/Pods-Demo.release.xcconfig"; sourceTree = "<group>"; };
 		6B3527A4D3CA321520E453EF /* Pods-DemoUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DemoUITests.release.xcconfig"; path = "Target Support Files/Pods-DemoUITests/Pods-DemoUITests.release.xcconfig"; sourceTree = "<group>"; };
 		7821C1C7F7555F4E07756901 /* Pods_DemoTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DemoTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -437,6 +443,7 @@
 				18A372B9238B744700F0A1BB /* Main.swift */,
 				18A372CC238B84C400F0A1BB /* Design.swift */,
 				18A372CA238B812900F0A1BB /* Details.swift */,
+				45EC7B1C23C8B1B000584168 /* Page */,
 				1827CC2F23C6CE9F00BF9492 /* SPage */,
 				45EC7B1023C6265800584168 /* AutoPage */,
 				18BEF5B223B45D930018E4A9 /* Projects */,
@@ -743,6 +750,16 @@
 			path = HPageAlert;
 			sourceTree = "<group>";
 		};
+		45EC7B1C23C8B1B000584168 /* Page */ = {
+			isa = PBXGroup;
+			children = (
+				45EC7B1F23C8B1B000584168 /* Page.swift */,
+				45EC7B1D23C8B1B000584168 /* PageDetails.swift */,
+				45EC7B1E23C8B1B000584168 /* CodeViewController.swift */,
+			);
+			path = Page;
+			sourceTree = "<group>";
+		};
 		541B328BABE8FA40933D1E55 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -1029,6 +1046,7 @@
 				1827CC3123C6CEBB00BF9492 /* SPage.swift in Sources */,
 				18A372C7238B76EC00F0A1BB /* AddCell.swift in Sources */,
 				18BEF5BE23B461710018E4A9 /* HInterfaceAdd.swift in Sources */,
+				45EC7B2123C8B1B000584168 /* CodeViewController.swift in Sources */,
 				18BEF5C223B4619F0018E4A9 /* HPageAdd.swift in Sources */,
 				18BEF5C423B461C80018E4A9 /* HProject.swift in Sources */,
 				183E79F8238CFF650031E3A2 /* Content204Cell.swift in Sources */,
@@ -1051,6 +1069,7 @@
 				183E79DD238BC3710031E3A2 /* HeadCell.swift in Sources */,
 				18A372CD238B84C400F0A1BB /* Design.swift in Sources */,
 				1884C71C237BB55A00A05B9A /* Adapter.swift in Sources */,
+				45EC7B2023C8B1B000584168 /* PageDetails.swift in Sources */,
 				184F1E5B2397B4DE002E141A /* TitleCell.swift in Sources */,
 				18911C0122CB4DC6007618B0 /* Home.swift in Sources */,
 				183E79D5238BB0A80031E3A2 /* TabHMMCell.swift in Sources */,
@@ -1058,6 +1077,7 @@
 				183E79D0238BB0510031E3A2 /* TabSelectionBar.swift in Sources */,
 				45985A7F22ED51D200FB19F4 /* TabContentCell.swift in Sources */,
 				18A3E40922FBBFBC0010E560 /* SetupCell.swift in Sources */,
+				45EC7B2223C8B1B000584168 /* Page.swift in Sources */,
 				183E7A1C238E69B90031E3A2 /* AlertMenuView.swift in Sources */,
 				183E7A1A238E69890031E3A2 /* SelectionBar3.swift in Sources */,
 				18B66B56238514D300A3126F /* LoginOutCell.swift in Sources */,
