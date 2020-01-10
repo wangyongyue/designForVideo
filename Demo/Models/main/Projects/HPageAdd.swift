@@ -51,7 +51,7 @@ class HPageAdd:Vue,V_ViewControllerProtocol{
     private func dealContent(){
         
         if let name = title{
-            self.arrayContent = PageCache.analysisCompenents(name)
+            self.arrayContent = PageCache.analysisCompenentsWithEditor(name)
         }
         self.arrayContent.append(AddCellModel())
 

@@ -23,7 +23,7 @@ open class VueData:NSObject {
     required public override init() {
         super.init()
     }
-    open func loadData(_ m:[String:String]){
+    open func loadData(_ m:[String:String],_ aisH:Bool){
     }
 }
 

@@ -57,7 +57,11 @@ class Record: NSObject {
                     var types = [VueData]()
                     for value in strs{
                        if let classType = NSClassFromString(value) as? VueData.Type {
-                        types.append(classType.init())
+                        let data = classType.init()
+                        if let sdic = DataStyle.loadStyle(value){
+                            data.loadData(sdic,false)
+                        }
+                        types.append(data)
                         }
                     }
                     d.array = types
@@ -168,6 +172,7 @@ class App: NSObject {
             if let records = userDefault.stringArray(forKey: "AppRecords\(title)"){
                 for value in records {
                    let r = Record.toClassModel(value)
+                    
                    array.append(r)
                 }
             }

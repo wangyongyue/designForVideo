@@ -148,13 +148,33 @@ class PageCache: NSObject {
         let userDefault = UserDefaults.standard
         var appTitles = [VueData]()
         if let titleArray = userDefault.stringArray(forKey: NSStringFromClass(PageCache.classForCoder()) + name){
+//            Debug.log(titleArray)
+
+            for value in titleArray{
+                if let classType = NSClassFromString(value) as? VueData.Type {
+                    let data = classType.init()
+                    if let dic = DataStyle.loadStyle(value){
+                        data.loadData(dic,true)
+                    }
+                    appTitles.append(data)
+                }
+            }
+        }
+        return appTitles
+        
+    }
+    static func analysisCompenentsWithEditor(_ name:String) -> [VueData]{
+        
+        let userDefault = UserDefaults.standard
+        var appTitles = [VueData]()
+        if let titleArray = userDefault.stringArray(forKey: NSStringFromClass(PageCache.classForCoder()) + name){
             Debug.log(titleArray)
 
             for value in titleArray{
                 if let classType = NSClassFromString(value) as? VueData.Type {
                     let data = classType.init()
                     if let dic = DataStyle.loadStyle(value){
-                        data.loadData(dic)
+                        data.loadData(dic,false)
                     }
                     appTitles.append(data)
                 }
@@ -208,20 +228,27 @@ class InterfacePage :NSObject{
         
     }
     
-    func cachePage(_ name:String){
+    func cachePage(){
+        if let aname = InterfaceCache.instance.name{
+            Debug.log(aname)
+
+            let userDefault = UserDefaults.standard
+            let str = self.sequencePages()
+            userDefault.set(str, forKey: NSStringFromClass(InterfacePage.classForCoder()) + aname)
+            Debug.log(str)
+
+        }
         
-        let userDefault = UserDefaults.standard
-        let str = self.sequencePages()
-        userDefault.set(str, forKey: NSStringFromClass(InterfacePage.classForCoder()) + name)
-        Debug.log(str)
         
         
     }
     static func getCachePage(_ name:String) -> InterfacePage{
-        
+        Debug.log(name)
+
         let userDefault = UserDefaults.standard
         if let string = userDefault.string(forKey: NSStringFromClass(InterfacePage.classForCoder()) + name){
             Debug.log(string)
+
             let page = InterfacePage.analysisPages(string)
             return page
         }

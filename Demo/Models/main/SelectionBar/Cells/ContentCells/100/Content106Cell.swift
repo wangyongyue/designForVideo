@@ -214,14 +214,14 @@ class Content106:VueData{
         isH = true
                       
        }
-    override func loadData(_ m: [String : String]) {
+    override func loadData(_ m: [String : String],_ aisH:Bool) {
         name = m["title"]
         source = m["source"]
         imageName = m["imageUrl"]
         imageCenterUrl = m["imageCenterUrl"]
         imageFooterUrl = m["imageFooterUrl"]
 
-        isH = Configuration.instructions.isSource
+        isH = aisH
 
                
     }

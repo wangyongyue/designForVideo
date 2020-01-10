@@ -77,7 +77,7 @@ class DataSource: NSObject {
                 if let classType = NSClassFromString(DataStyle.getAppName() + className) as? VueData.Type {
                     let data = classType.init()
                     let dic = dataArray[index] as! [String:String]
-                    data.loadData(dic)
+                    data.loadData(dic,true)
                     datas.append(data)
                     
                     
@@ -113,7 +113,7 @@ class DataSource: NSObject {
                 if let classType = NSClassFromString(DataStyle.getAppName() + className) as? VueData.Type {
                     let data = classType.init()
                     let dic = dataArray[index] as! [String:String]
-                    data.loadData(dic)
+                    data.loadData(dic,true)
                     datas.append(data)
                     
                     

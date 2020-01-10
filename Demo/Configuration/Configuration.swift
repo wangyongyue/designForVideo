@@ -20,7 +20,6 @@ let  bgColor = UIColor.init(red: 230/255.0, green: 230/255.0, blue: 230/255.0, a
 class Configuration{
     
     var imageDefault = true //false true //为true显示默认图片
-    var isSource = true //false true 为false 显示删除
 
     static let instructions = KnowledgeInstructions()
     
@@ -92,6 +91,8 @@ extension UIViewController{
     
     static func toProject(){
             let app = UIApplication.shared.delegate as! AppDelegate
+        
+
             let tab = Configuration.instructions.getMainTabBar()
             app.window?.rootViewController = tab;
             app.window?.makeKeyAndVisible();
@@ -100,7 +101,6 @@ extension UIViewController{
         }
     static func toPage(){
         let app = UIApplication.shared.delegate as! AppDelegate
-        Configuration.instructions.isSource = false
 
         let tab = BaseNavigationController.init(rootViewController: SPage().v_viewController())
         app.window?.rootViewController = tab;
@@ -115,7 +115,6 @@ extension UIViewController{
         so.sourceStr = "Soure1"
         let m = AutoPage()
         m.source = so
-        Configuration.instructions.isSource = true
       
         let tab = BaseNavigationController.init(rootViewController: m.v_viewController())
         app.window?.rootViewController = tab;

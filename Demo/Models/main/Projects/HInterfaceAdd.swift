@@ -81,10 +81,7 @@ class HInterfaceAdd:Vue,V_ViewControllerProtocol{
                     m.iPage = p
                     self.iPage?.page = p
                     
-                    if let name = InterfaceCache.instance.name {
-                        InterfaceCache.instance.interPage?.cachePage(name)
-
-                    }
+                    InterfaceCache.instance.interPage?.cachePage()
                     
                     Router.push(m, nil, nil)
                     

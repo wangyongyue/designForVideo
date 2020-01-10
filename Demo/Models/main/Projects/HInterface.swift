@@ -91,11 +91,16 @@ class HInterface:Vue,V_ViewControllerProtocol{
                 }else{
                     let dm = data as? BriefCellModel
                     if let name = dm?.name{
+                        InterfaceCache.instance.name = name
+
                        let p = InterfacePage.getCachePage(name)
                         if let title = p.name{
                             
                             let m = HInterfaceAdd()
                             m.iPage = p
+                            
+                            InterfaceCache.instance.interPage = p
+                            
                             Router.push(m, nil, nil)
                             
                         }else{
@@ -108,8 +113,7 @@ class HInterface:Vue,V_ViewControllerProtocol{
                                 m.iPage = ip
                                 
                                 InterfaceCache.instance.interPage = ip
-                                InterfaceCache.instance.name = name
-                                ip.cachePage(name)
+                                ip.cachePage()
                                 
                                 Router.push(m, nil, nil)
                                 

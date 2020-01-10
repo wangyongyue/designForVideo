@@ -50,12 +50,12 @@ class HStyle:Vue,V_ViewControllerProtocol{
     private func dealContent(){
 
            self.arrayContent.removeAll()
-           self.arrayContent.append(Content101(true))
-           self.arrayContent.append(Content102(true))
-           self.arrayContent.append(Content103(true))
-           self.arrayContent.append(Content104(true))
-           self.arrayContent.append(Content105(true))
-           self.arrayContent.append(Content106(true))
+           self.arrayContent.append(Content101(DataStyle.loadStyle(NSStringFromClass(Content101.classForCoder()))))
+           self.arrayContent.append(Content102(DataStyle.loadStyle(NSStringFromClass(Content102.classForCoder()))))
+           self.arrayContent.append(Content103(DataStyle.loadStyle(NSStringFromClass(Content103.classForCoder()))))
+           self.arrayContent.append(Content104(DataStyle.loadStyle(NSStringFromClass(Content104.classForCoder()))))
+           self.arrayContent.append(Content105(DataStyle.loadStyle(NSStringFromClass(Content105.classForCoder()))))
+           self.arrayContent.append(Content106(DataStyle.loadStyle(NSStringFromClass(Content106.classForCoder()))))
 
            self.v_array(vId: ARRAYID) { () -> Array<VueData>? in
                return self.arrayContent
