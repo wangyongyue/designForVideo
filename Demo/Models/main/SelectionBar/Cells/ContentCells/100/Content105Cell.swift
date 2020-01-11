@@ -120,14 +120,18 @@ class Content105Cell: UITableViewCell {
         if aModel is Content105{
             let m = aModel as! Content105
             
-            if let a = m.name,let b = m.source,let c = m.imageName{
+            if let a = m.name,let b = m.source{
                 headerLabel1.text = a
                 headerLabel2.text = b
-                bigImage.image = UIImage.init(named: Image.fillImage(c))
             }else{
                 headerLabel1.text = "数据数据数据数据"
                 headerLabel2.text = "数据数据数据数据"
-                bigImage.image = UIImage.init(named: Image.fillImage("che1"))
+            }
+            
+            if let c = m.imageName{
+                bigImage.image = UIImage.init(named: Image.fillImage(c))
+            }else{
+                bigImage.image = UIImage.init(named: Image.fillImage("che5"))
             }
            
             deleteButton.isHidden = m.isH

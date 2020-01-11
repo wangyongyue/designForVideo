@@ -390,13 +390,13 @@ class CodeCache: NSObject {
     static func cachePageContents(_ name:String,_ titles:String){
         
         let userDefault = UserDefaults.standard
-        var array = [String]()
-        let strs = titles.components(separatedBy: ",")
-        for value in strs{
-            array.append(value)
-        }
-        Debug.log(array)
-        userDefault.set(array, forKey: NSStringFromClass(CodeCache.classForCoder()) + name)
+//        var array = [String]()
+//        let strs = titles.components(separatedBy: ",")
+//        for value in strs{
+//            array.append(value)
+//        }
+        Debug.log(titles)
+        userDefault.set(titles, forKey: NSStringFromClass(CodeCache.classForCoder()) + name)
         
     }
     
@@ -420,7 +420,45 @@ class CodeCache: NSObject {
         Debug.log(datas)
         return datas
     }
-   
-    
+    static func getPageContentsArrayWithData(_ name:String) -> [VueData]{
+        
+        
+        let userDefault = UserDefaults.standard
+        var datas = [VueData]()
+
+        if let json = userDefault.string(forKey: NSStringFromClass(CodeCache.classForCoder()) + name){
+            
+            let jsonStr = json.replacingOccurrences(of: "\\", with: "")
+            let jsonData:Data = jsonStr.data(using: .utf8)!
+            if let jsonSer = try? JSONSerialization.jsonObject(with: jsonData, options: .mutableContainers){
+               Debug.log(jsonSer)
+                if let dic = jsonSer as? NSDictionary{
+                    
+                    if let strings = dic["dataModel"] as? [String]{
+                        
+                        for (index,value) in strings.enumerated(){
+                           if let classType = NSClassFromString(DataStyle.getAppName() + value) as? VueData.Type {
+                               let data = classType.init()
+                               if let sourceArray = dic["data"] as? NSArray{
+                                   if let dic = sourceArray[index] as? [String:String]{
+                                       data.loadData(dic,true)
+                                   }
+                                }
+                               datas.append(data)
+                           }
+                        }
+                    }
+                }
+
+            }
+                
+                
+            
+        }
+
+        return datas
+        
+        
+    }
     
 }

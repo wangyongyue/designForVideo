@@ -51,7 +51,7 @@ class PageDetails:Vue,V_ViewControllerProtocol{
     }
     private func dealContent(){
         if let a = title{
-            self.arrayContent = CodeCache.getPageContentsArray(a)
+            self.arrayContent = CodeCache.getPageContentsArrayWithData(a)
         }
       
        self.v_array(vId: ARRAYID) { () -> Array<VueData>? in

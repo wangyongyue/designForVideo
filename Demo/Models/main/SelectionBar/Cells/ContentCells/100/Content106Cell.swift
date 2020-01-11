@@ -161,21 +161,31 @@ class Content106Cell: UITableViewCell {
             
             let m = aModel as! Content106
             
-            if let a = m.name,let b = m.source,let c = m.imageName,let d = m.imageCenterUrl,let f = m.imageFooterUrl{
+            if let a = m.name,let b = m.source{
                 headerLabel1.text = a
                 headerLabel2.text = b
-                bigImage.image = UIImage.init(named: Image.fillImage(c))
-                bigImage1.image = UIImage.init(named: Image.fillImage(d))
-                bigImage2.image = UIImage.init(named: Image.fillImage(f))
+                
 
             }else{
                 headerLabel1.text = "数据数据数据数据"
                 headerLabel2.text = "数据数据数据数据"
-                bigImage.image = UIImage.init(named: Image.fillImage("che1"))
-                bigImage1.image = UIImage.init(named: Image.fillImage("che4"))
-                bigImage2.image = UIImage.init(named: Image.fillImage("che6"))
-
+            
             }
+            
+            if let c = m.imageName,let d = m.imageCenterUrl,let f = m.imageFooterUrl{
+                
+                 bigImage.image = UIImage.init(named: Image.fillImage(c))
+                 bigImage1.image = UIImage.init(named: Image.fillImage(d))
+                 bigImage2.image = UIImage.init(named: Image.fillImage(f))
+
+             }else{
+                
+                 bigImage.image = UIImage.init(named: Image.fillImage("che1"))
+                 bigImage1.image = UIImage.init(named: Image.fillImage("che4"))
+                 bigImage2.image = UIImage.init(named: Image.fillImage("che6"))
+
+             }
+            
            
             deleteButton.isHidden = m.isH
             deleteButton.v_click {
