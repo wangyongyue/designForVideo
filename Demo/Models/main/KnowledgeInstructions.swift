@@ -61,6 +61,11 @@ class KnowledgeInstructions: Configuration {
         Vue.register(aClass: NavAddCellModel.classForCoder(), toClass: NavAddCell.classForCoder())
 
         
+        Vue.register(aClass: ContentEdiotr.classForCoder(), toClass: ContentEdiotrCell.classForCoder())
+        Vue.register(aClass: ContentButton.classForCoder(), toClass: ContentButtonCell.classForCoder())
+
+        
+        
     }
     
 
@@ -93,7 +98,7 @@ class KnowledgeInstructions: Configuration {
         
         tab.addChildVC(childVC: HInterface().v_viewController(), childTitle: "模块", image: UIImage.init(named: "konw_1"), selectedImage:UIImage.init(named: "konw_1"))
         
-        tab.addChildVC(childVC: HPage().v_viewController(), childTitle: "单页", image: UIImage.init(named: "konw_1"), selectedImage:UIImage.init(named: "konw_1"))
+        tab.addChildVC(childVC: Page().v_viewController(), childTitle: "单页", image: UIImage.init(named: "konw_1"), selectedImage:UIImage.init(named: "konw_1"))
 
         tab.addChildVC(childVC: HStyle().v_viewController(), childTitle: "组件样式", image: UIImage.init(named: "konw_1"), selectedImage:UIImage.init(named: "konw_1"))
 

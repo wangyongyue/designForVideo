@@ -35,7 +35,7 @@ class HStyle:Vue,V_ViewControllerProtocol{
     }
     private func dealNav(){
         
-        let m = NavTitleCellModel()
+        let m = TitleCellModel()
         m.name = "组件样式"
         self.arrayNav.append(m)
         self.v_array(vId: NAVARRAYID) { () -> Array<VueData>? in

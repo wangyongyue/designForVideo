@@ -390,11 +390,6 @@ class CodeCache: NSObject {
     static func cachePageContents(_ name:String,_ titles:String){
         
         let userDefault = UserDefaults.standard
-//        var array = [String]()
-//        let strs = titles.components(separatedBy: ",")
-//        for value in strs{
-//            array.append(value)
-//        }
         Debug.log(titles)
         userDefault.set(titles, forKey: NSStringFromClass(CodeCache.classForCoder()) + name)
         
@@ -420,7 +415,7 @@ class CodeCache: NSObject {
         Debug.log(datas)
         return datas
     }
-    static func getPageContentsArrayWithData(_ name:String) -> [VueData]{
+    static func getPageContentsArrayWithData(_ name:String,_ isE:Bool) -> [VueData]{
         
         
         let userDefault = UserDefaults.standard
@@ -441,7 +436,7 @@ class CodeCache: NSObject {
                                let data = classType.init()
                                if let sourceArray = dic["data"] as? NSArray{
                                    if let dic = sourceArray[index] as? [String:String]{
-                                       data.loadData(dic,true)
+                                       data.loadData(dic,isE)
                                    }
                                 }
                                datas.append(data)

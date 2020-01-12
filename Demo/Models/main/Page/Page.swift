@@ -38,19 +38,43 @@ class Page:Vue,V_ViewControllerProtocol{
     private func dealNav(){
         
         let m = NavTitleCellModel()
-        m.name = "VSK"
+        m.name = "单页"
         self.arrayNav.append(m)
         self.v_array(vId: NAVARRAYID) { () -> Array<VueData>? in
             return self.arrayNav
         }
         self.v_index(vId: NAVINDEXID) { (index) in
             
-            let vc = CodeViewController()
-            vc.backCodeBlock { (str) in
+            if m.v_identifier == 1{
+                let vc = CodeViewController()
+                vc.backCodeBlock { (str) in
+                    
+                    self.addTitle(str)
+                }
+                Router.currentController().navigationController?.pushViewController(vc, animated: false)
+            }else{
                 
-                self.addTitle(str)
+               Alert.editorContent("请输入标题"){ (str) in
+                   let code = CodeCache()
+                   code.name = str
+                   if code.cacheProject(){
+                       
+                       let a = BriefCellModel()
+                       a.name = str
+                       self.arrayContent.append(a)
+                       self.dealContent()
+                    
+
+                       let p = PageDetails()
+                       p.title = str
+                       Router.push(p, nil, nil)
+                       
+                   }
+                   
+               }
+                
             }
-            Router.currentController().navigationController?.pushViewController(vc, animated: false)
+            
         }
         
     }
@@ -76,7 +100,7 @@ class Page:Vue,V_ViewControllerProtocol{
     private func dealContent(){
 
         self.arrayContent.removeAll()
-        self.arrayContent.append(HeadCellModel())
+//        self.arrayContent.append(HeadCellModel())
         
         let array = CodeCache.getCacheArray()
         for value in array{
@@ -102,7 +126,7 @@ class Page:Vue,V_ViewControllerProtocol{
                     self.v_array(vId: ARRAYID) { () -> Array<VueData>? in
                         return self.arrayContent
                     }
-                    CodeCache.remvoeCacheProject(index - 1)
+                    CodeCache.remvoeCacheProject(index)
 
                  }else{
                     

@@ -34,7 +34,7 @@ class DataStyle: NSObject {
 
         }else{
             
-            let path = Bundle.main.path(forResource: "Style2", ofType: "json");
+            let path = Bundle.main.path(forResource: "Style1", ofType: "json");
             let url = URL(fileURLWithPath: path!)
             let data = try? Data(contentsOf: url)
             jsonSource = try? JSONSerialization.jsonObject(with: data!, options: JSONSerialization.ReadingOptions.mutableContainers)

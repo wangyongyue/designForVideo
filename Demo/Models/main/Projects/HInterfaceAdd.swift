@@ -53,10 +53,13 @@ class HInterfaceAdd:Vue,V_ViewControllerProtocol{
     }
     private func dealContent(){
         
-        if let name = iPage?.name{
-            self.arrayContent = PageCache.analysisCompenents(name)
-        }
+//        if let name = iPage?.name{
+//            self.arrayContent = PageCache.analysisCompenents(name)
+//        }
       
+        if let name = iPage?.name{
+            self.arrayContent = CodeCache.getPageContentsArrayWithData(name,true)
+        }
        self.v_array(vId: ARRAYID) { () -> Array<VueData>? in
            return self.arrayContent
                   

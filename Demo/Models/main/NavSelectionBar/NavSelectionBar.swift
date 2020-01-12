@@ -9,6 +9,8 @@
 import UIKit
 import VueSwift
 typealias VDataBlock = (VueData) -> ()
+typealias VDicBlock = ([String:String]) -> ()
+
 class NavSelectionBar:Vue{
     
     private var block:VDataBlock?

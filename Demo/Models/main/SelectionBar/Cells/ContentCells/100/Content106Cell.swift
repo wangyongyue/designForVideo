@@ -225,6 +225,8 @@ class Content106:VueData{
                       
        }
     override func loadData(_ m: [String : String],_ aisH:Bool) {
+        super.loadData(m, aisH)
+
         name = m["title"]
         source = m["source"]
         imageName = m["imageUrl"]

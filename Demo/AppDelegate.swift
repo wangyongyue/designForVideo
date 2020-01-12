@@ -25,11 +25,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 //        application.changeMethod(UIApplication.classForCoder())
 
 //        UIViewController.toMain()
-//        UIViewController.toProject()
+        UIViewController.toProject()
 //        UIViewController.toPage()
 //        UIViewController.toAutoPage()
           
-          UIViewController.toCodePage()
+//          UIViewController.toCodePage()
 
         return true
     }

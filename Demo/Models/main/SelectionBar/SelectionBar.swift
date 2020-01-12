@@ -49,7 +49,7 @@ class SelectionBar:Vue{
         if let classType = a.classForCoder as? VueData.Type {
             let model = classType.init()
             if let dic = DataStyle.loadStyle(NSStringFromClass(a.classForCoder)){
-                model.loadData(dic,true)
+                model.loadData(dic,false)
             }
             self.block?(model)
         }

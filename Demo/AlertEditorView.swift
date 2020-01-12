@@ -1,14 +1,15 @@
 //
-//  AlertTableView.swift
+//  AlertEditorView.swift
 //  Demo
 //
-//  Created by apple on 2019/11/25.
-//  Copyright © 2019 test. All rights reserved.
+//  Created by wangyongyue on 2020/1/12.
+//  Copyright © 2020 test. All rights reserved.
 //
+
 
 import UIKit
 import VueSwift
-class AlertTableView: UIView{
+class AlertEditorView: UIView{
 
     convenience init(_ m:Vue) {
         self.init()
@@ -21,16 +22,17 @@ class AlertTableView: UIView{
         let table = CTable()
         self.addSubview(table)
         table.backgroundColor = Configuration.instructions.backgroundColor()
-        table.snp.makeConstraints { (make) in
-            
-            make.top.equalTo(150)
-            make.left.equalTo(0)
-            make.right.equalTo(0)
-            make.bottom.equalTo(0)
-            
-        }
-        table.layer.cornerRadius = 10
-        table.layer.masksToBounds = true
+         table.snp.makeConstraints { (make) in
+                   
+                   make.top.equalTo(200)
+                   make.left.equalTo(12)
+                   make.right.equalTo(-12)
+                   make.height.equalTo(200)
+                   
+               }
+               table.layer.cornerRadius = 6
+               table.layer.masksToBounds = true
+        
         table.v_array(vId: ARRAYID, vue: m)
         table.v_index(vId: INDEXID, vue: m)
         m.v_start()

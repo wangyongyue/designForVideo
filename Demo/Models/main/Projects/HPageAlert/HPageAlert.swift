@@ -28,11 +28,13 @@ class HPageAlert:Vue{
         
        
        var array = Array<VueData>()
-        for value in PageCache.getCacheArray(){
+
+        for value in CodeCache.getCacheArray(){
             let a = TitleCellModel()
             a.name = value.name
             array.append(a)
         }
+        
  
        self.v_array(vId: ARRAYID) { () -> Array<VueData>? in
            return array

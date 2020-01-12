@@ -10,6 +10,7 @@ import UIKit
 
 open class VueData:NSObject {
     public var v_identifier:Int = 0
+    public var vData:[String:String]?
     open func v_height() -> CGFloat{
         return 50
     }
@@ -24,7 +25,7 @@ open class VueData:NSObject {
         super.init()
     }
     open func loadData(_ m:[String:String],_ aisH:Bool){
-        
+        vData = m
     }
 }
 
