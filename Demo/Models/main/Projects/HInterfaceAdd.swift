@@ -38,8 +38,8 @@ class HInterfaceAdd:Vue,V_ViewControllerProtocol{
         
     }
     private func dealNav(){
-        
-        let m = NavBackCellModel()
+        self.arrayNav.removeAll()
+        let m = NavBackResetCellModel()
         m.name = iPage?.name
         self.arrayNav.append(m)
         self.v_array(vId: NAVARRAYID) { () -> Array<VueData>? in
@@ -47,16 +47,23 @@ class HInterfaceAdd:Vue,V_ViewControllerProtocol{
         }
         self.v_index(vId: NAVINDEXID) { (index) in
             
+            self.page.show { (data) in
+                
+                let a = data as! TitleCellModel
+                self.iPage?.name = a.name
+
+                InterfaceCache.instance.interPage?.cachePage()
+                self.dealContent()
+                self.dealNav()
+                
+            }
+            
         }
         
         
     }
     private func dealContent(){
-        
-//        if let name = iPage?.name{
-//            self.arrayContent = PageCache.analysisCompenents(name)
-//        }
-      
+              
         if let name = iPage?.name{
             self.arrayContent = CodeCache.getPageContentsArrayWithData(name,true)
         }

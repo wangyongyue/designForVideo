@@ -63,6 +63,7 @@ class KnowledgeInstructions: Configuration {
         
         Vue.register(aClass: ContentEdiotr.classForCoder(), toClass: ContentEdiotrCell.classForCoder())
         Vue.register(aClass: ContentButton.classForCoder(), toClass: ContentButtonCell.classForCoder())
+        Vue.register(aClass: NavBackResetCellModel.classForCoder(), toClass: NavBackResetCell.classForCoder())
 
         
         

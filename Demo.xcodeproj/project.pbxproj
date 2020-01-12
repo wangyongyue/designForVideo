@@ -129,6 +129,7 @@
 		45EC7B2823CAC73400584168 /* ContentEdiotrCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45EC7B2723CAC73400584168 /* ContentEdiotrCell.swift */; };
 		45EC7B2A23CAD5FD00584168 /* AlertEditorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45EC7B2923CAD5FD00584168 /* AlertEditorView.swift */; };
 		45EC7B2C23CAD7E400584168 /* ContentButtonCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45EC7B2B23CAD7E400584168 /* ContentButtonCell.swift */; };
+		45EC7B2E23CB573700584168 /* NavBackResetCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45EC7B2D23CB573700584168 /* NavBackResetCell.swift */; };
 		B617D314845B89B19697980D /* Pods_Demo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 42FFFBDD17AFD3F17E4B29D5 /* Pods_Demo.framework */; };
 		D44991443EF71FB9075AD326 /* Pods_DemoUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CFB92A2976401FA38EB89D96 /* Pods_DemoUITests.framework */; };
 /* End PBXBuildFile section */
@@ -280,6 +281,7 @@
 		45EC7B2723CAC73400584168 /* ContentEdiotrCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentEdiotrCell.swift; sourceTree = "<group>"; };
 		45EC7B2923CAD5FD00584168 /* AlertEditorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertEditorView.swift; sourceTree = "<group>"; };
 		45EC7B2B23CAD7E400584168 /* ContentButtonCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentButtonCell.swift; sourceTree = "<group>"; };
+		45EC7B2D23CB573700584168 /* NavBackResetCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavBackResetCell.swift; sourceTree = "<group>"; };
 		5A111DE660BB3C699F05D563 /* Pods-Demo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Demo.release.xcconfig"; path = "Target Support Files/Pods-Demo/Pods-Demo.release.xcconfig"; sourceTree = "<group>"; };
 		6B3527A4D3CA321520E453EF /* Pods-DemoUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DemoUITests.release.xcconfig"; path = "Target Support Files/Pods-DemoUITests/Pods-DemoUITests.release.xcconfig"; sourceTree = "<group>"; };
 		7821C1C7F7555F4E07756901 /* Pods_DemoTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DemoTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -620,6 +622,7 @@
 				18C6D9E0237CE94C00BCF77E /* NavBackCell.swift */,
 				18A372BE238B75FB00F0A1BB /* NavMainCell.swift */,
 				18BEF5C523B480180018E4A9 /* NavAddCell.swift */,
+				45EC7B2D23CB573700584168 /* NavBackResetCell.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -1059,6 +1062,7 @@
 				1827CC3123C6CEBB00BF9492 /* SPage.swift in Sources */,
 				18A372C7238B76EC00F0A1BB /* AddCell.swift in Sources */,
 				18BEF5BE23B461710018E4A9 /* HInterfaceAdd.swift in Sources */,
+				45EC7B2E23CB573700584168 /* NavBackResetCell.swift in Sources */,
 				45EC7B2123C8B1B000584168 /* CodeViewController.swift in Sources */,
 				18BEF5C223B4619F0018E4A9 /* HPageAdd.swift in Sources */,
 				45EC7B2C23CAD7E400584168 /* ContentButtonCell.swift in Sources */,
@@ -1317,7 +1321,7 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 9;
+				CURRENT_PROJECT_VERSION = 10;
 				DEVELOPMENT_TEAM = 82N4WSYENF;
 				INFOPLIST_FILE = Demo/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
@@ -1341,7 +1345,7 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 9;
+				CURRENT_PROJECT_VERSION = 10;
 				DEVELOPMENT_TEAM = 82N4WSYENF;
 				INFOPLIST_FILE = Demo/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
